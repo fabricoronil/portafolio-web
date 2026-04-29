@@ -315,6 +315,33 @@
       justify-content: center;
       flex-wrap: wrap;
     }
+    .hero-socials {
+      display: flex;
+      gap: 0.85rem;
+      justify-content: center;
+      margin-top: 1.75rem;
+    }
+    .social-icon {
+      width: 44px;
+      height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: var(--surface);
+      border: 1px solid var(--border-strong);
+      color: var(--text);
+      backdrop-filter: blur(8px);
+      transition: all var(--transition);
+    }
+    .social-icon svg { width: 20px; height: 20px; }
+    .social-icon:hover {
+      transform: translateY(-3px);
+      border-color: #ffffff;
+      color: #ffffff;
+      background: var(--surface-strong);
+      box-shadow: 0 8px 20px -10px rgba(255,255,255,0.4);
+    }
     .btn {
       display: inline-flex;
       align-items: center;
@@ -449,38 +476,116 @@
     }
 
     /* ============ TECH STACK ============ */
-    .stack-groups { display: grid; gap: 2.5rem; }
+    .stack-groups {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .stack-group {
+      position: relative;
+      padding: 1.75rem 1.5rem;
+      background: linear-gradient(180deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.015) 100%);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      transition: all var(--transition);
+      overflow: hidden;
+      text-align: center;
+    }
+    .stack-group::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      padding: 1px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.18), rgba(255,255,255,0) 50%, rgba(255,255,255,0.08));
+      -webkit-mask: linear-gradient(#000, #000) content-box, linear-gradient(#000, #000);
+              mask: linear-gradient(#000, #000) content-box, linear-gradient(#000, #000);
+      -webkit-mask-composite: xor;
+              mask-composite: exclude;
+      pointer-events: none;
+      opacity: 0.7;
+    }
+    .stack-group::after {
+      content: "";
+      position: absolute;
+      top: -40%;
+      left: 50%;
+      width: 220px;
+      height: 220px;
+      transform: translateX(-50%);
+      background: radial-gradient(circle, rgba(255,255,255,0.07) 0%, transparent 70%);
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity var(--transition);
+    }
+    .stack-group:hover {
+      transform: translateY(-4px);
+      border-color: rgba(255,255,255,0.18);
+      background: linear-gradient(180deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%);
+      box-shadow: 0 18px 40px -20px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.04) inset;
+    }
+    .stack-group:hover::after { opacity: 1; }
     .stack-group h3 {
-      font-size: 0.95rem;
-      margin-bottom: 1rem;
+      position: relative;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.9rem;
+      justify-content: center;
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.55rem;
       color: var(--text);
     }
-    .stack-group h3 span:first-child { font-size: 1.15rem; }
-    .badges { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+    .stack-group h3::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%);
+      width: 32px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    }
+    .stack-group h3 span:first-child {
+      font-size: 1.1rem;
+      filter: grayscale(0.1);
+    }
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      justify-content: center;
+      position: relative;
+    }
     .badge {
-      padding: 0.5rem 0.95rem;
-      background: var(--surface);
-      border: 1px solid var(--border);
+      padding: 0.5rem 0.95rem 0.5rem 0.55rem;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
       border-radius: 999px;
       font-size: 0.78rem;
       font-weight: 500;
       color: var(--text-dim);
       backdrop-filter: blur(8px);
-      transition: all var(--transition);
+      transition: transform 220ms ease, border-color 220ms ease, color 220ms ease, background 220ms ease, box-shadow 220ms ease;
       cursor: default;
       display: inline-flex;
       align-items: center;
-      gap: 0.45rem;
+      gap: 0.5rem;
+      will-change: transform;
     }
     .badge:hover {
-      transform: translateY(-3px);
-      border-color: rgba(255,255,255,0.4);
+      transform: translateY(-3px) scale(1.04);
+      border-color: rgba(255,255,255,0.35);
       color: #ffffff;
-      box-shadow: 0 8px 20px -10px rgba(255,255,255,0.3);
-      background: var(--surface-strong);
+      background: rgba(255,255,255,0.08);
+      box-shadow: 0 10px 24px -12px rgba(255,255,255,0.25), 0 0 0 1px rgba(255,255,255,0.04) inset;
     }
     .badge-dot {
       width: 6px; height: 6px;
@@ -488,8 +593,167 @@
       background: linear-gradient(135deg, #ffffff, #666666) !important;
       box-shadow: 0 0 6px rgba(255,255,255,0.4);
     }
+    .badge-icon {
+      width: 20px;
+      height: 20px;
+      object-fit: contain;
+      display: inline-block;
+      flex-shrink: 0;
+      transition: transform 220ms ease;
+    }
+    .badge:hover .badge-icon { transform: scale(1.12) rotate(-4deg); }
+    .badge-icon-invert { filter: brightness(0) invert(1); }
+    .tech-icon {
+      width: 14px;
+      height: 14px;
+      object-fit: contain;
+      display: inline-block;
+      vertical-align: -2px;
+      margin-right: 0.35rem;
+      flex-shrink: 0;
+    }
+    .showcase-tech span {
+      display: inline-flex;
+      align-items: center;
+    }
+    .showcase-tech .tech-icon { width: 13px; height: 13px; margin-right: 0.35rem; }
 
     /* ============ PROJECTS ============ */
+    .showcase-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+      gap: 1.75rem;
+      margin-bottom: 4.5rem;
+    }
+    .showcase-card {
+      position: relative;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      backdrop-filter: blur(12px);
+      transition: transform 0.4s cubic-bezier(.2,.8,.2,1),
+                  border-color var(--transition),
+                  box-shadow var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+    .showcase-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(255,255,255,0.28);
+      box-shadow:
+        0 30px 60px -25px rgba(0,0,0,0.7),
+        0 0 0 1px rgba(255,255,255,0.05) inset;
+    }
+    .showcase-thumb {
+      position: relative;
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+      background: var(--bg-1);
+      border-bottom: 1px solid var(--border);
+    }
+    .showcase-thumb::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.55));
+      opacity: 0.7;
+      transition: opacity var(--transition);
+      pointer-events: none;
+    }
+    .showcase-card:hover .showcase-thumb::after { opacity: 0.25; }
+    .showcase-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      transition: transform 0.7s cubic-bezier(.2,.8,.2,1);
+      display: block;
+    }
+    .showcase-card:hover .showcase-thumb img { transform: scale(1.06); }
+    .showcase-chip {
+      position: absolute;
+      top: 0.85rem; left: 0.85rem;
+      z-index: 2;
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-weight: 600;
+      padding: 0.32rem 0.7rem;
+      background: rgba(5,5,5,0.78);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 999px;
+      backdrop-filter: blur(10px);
+      color: #fff;
+    }
+    .showcase-body {
+      padding: 1.65rem 1.75rem 1.85rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      flex-grow: 1;
+    }
+    .showcase-title {
+      font-family: var(--font-head);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.01em;
+    }
+    .showcase-desc {
+      color: var(--text-dim);
+      font-size: 0.92rem;
+      line-height: 1.65;
+      flex-grow: 1;
+    }
+    .showcase-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      padding-top: 0.55rem;
+      border-top: 1px solid var(--border);
+      margin-top: 0.35rem;
+    }
+    .showcase-tech span {
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 0.3rem 0.7rem;
+      background: var(--bg-2);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      color: var(--text-dim);
+      letter-spacing: 0.02em;
+    }
+    .showcase-link {
+      position: absolute;
+      inset: 0;
+      z-index: 3;
+      text-indent: -9999px;
+      overflow: hidden;
+    }
+    .showcase-arrow {
+      position: absolute;
+      top: 0.85rem; right: 0.85rem;
+      z-index: 2;
+      width: 34px; height: 34px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: rgba(5,5,5,0.78);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: #fff;
+      backdrop-filter: blur(10px);
+      transition: all var(--transition);
+      opacity: 0;
+      transform: translateY(-4px);
+    }
+    .showcase-card:hover .showcase-arrow {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .showcase-arrow svg { width: 14px; height: 14px; }
+
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -700,6 +964,215 @@
       color: var(--text-dim);
     }
 
+    /* ============ CERTIFICATIONS ============ */
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+    .cert-card {
+      position: relative;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+      transition: transform 0.4s cubic-bezier(.2,.8,.2,1),
+                  border-color var(--transition),
+                  box-shadow var(--transition);
+      cursor: zoom-in;
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      width: 100%;
+    }
+    .cert-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(255,255,255,0.28);
+      box-shadow:
+        0 25px 55px -25px rgba(0,0,0,0.7),
+        0 0 0 1px rgba(255,255,255,0.05) inset;
+    }
+    .cert-card:focus-visible {
+      outline: 2px solid #fff;
+      outline-offset: 3px;
+    }
+    .cert-thumb {
+      position: relative;
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+      background: #f4f4f4;
+      border-bottom: 1px solid var(--border);
+    }
+    .cert-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      transition: transform 0.7s cubic-bezier(.2,.8,.2,1);
+      display: block;
+    }
+    .cert-card:hover .cert-thumb img { transform: scale(1.05); }
+    .cert-grade {
+      position: absolute;
+      top: 0.7rem; right: 0.7rem;
+      z-index: 2;
+      font-size: 0.58rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-weight: 700;
+      padding: 0.32rem 0.7rem;
+      background: rgba(5,5,5,0.85);
+      border: 1px solid rgba(255,255,255,0.28);
+      border-radius: 999px;
+      color: #fff;
+      backdrop-filter: blur(8px);
+    }
+    .cert-zoom {
+      position: absolute;
+      bottom: 0.7rem; right: 0.7rem;
+      z-index: 2;
+      width: 34px; height: 34px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: rgba(5,5,5,0.85);
+      border: 1px solid rgba(255,255,255,0.28);
+      color: #fff;
+      backdrop-filter: blur(8px);
+      opacity: 0;
+      transform: translateY(6px);
+      transition: all var(--transition);
+    }
+    .cert-card:hover .cert-zoom { opacity: 1; transform: translateY(0); }
+    .cert-zoom svg { width: 14px; height: 14px; }
+    .cert-body {
+      padding: 1.1rem 1.2rem 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+      flex-grow: 1;
+    }
+    .cert-issuer {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.62rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--text-dim);
+    }
+    .cert-issuer::before {
+      content: '';
+      width: 16px; height: 1px;
+      background: linear-gradient(90deg, #ffffff, transparent);
+    }
+    .cert-name {
+      font-family: var(--font-head);
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.35;
+      letter-spacing: -0.01em;
+    }
+    .cert-meta {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+      margin-top: auto;
+      padding-top: 0.6rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.7rem;
+      color: var(--text-muted);
+    }
+    .cert-meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+    .cert-meta svg { width: 12px; height: 12px; }
+
+    /* Lightbox */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      background: rgba(0, 0, 0, 0.94);
+      backdrop-filter: blur(10px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s;
+    }
+    .lightbox.open { opacity: 1; visibility: visible; }
+    .lightbox-image {
+      max-width: min(1100px, 92vw);
+      max-height: 86vh;
+      border-radius: 10px;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.7);
+      object-fit: contain;
+      transform: scale(0.96);
+      transition: transform 0.35s cubic-bezier(.2,.8,.2,1);
+    }
+    .lightbox.open .lightbox-image { transform: scale(1); }
+    .lightbox-close,
+    .lightbox-nav {
+      position: absolute;
+      width: 46px; height: 46px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.25);
+      color: #fff;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(10px);
+      transition: all var(--transition);
+    }
+    .lightbox-close { top: 1.25rem; right: 1.25rem; }
+    .lightbox-close:hover {
+      background: rgba(255,255,255,0.2);
+      transform: rotate(90deg);
+    }
+    .lightbox-nav {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    .lightbox-nav.prev { left: 1.25rem; }
+    .lightbox-nav.next { right: 1.25rem; }
+    .lightbox-nav:hover {
+      background: rgba(255,255,255,0.2);
+      transform: translateY(-50%) scale(1.08);
+    }
+    .lightbox-caption {
+      position: absolute;
+      bottom: 1.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #fff;
+      font-size: 0.78rem;
+      letter-spacing: 0.05em;
+      background: rgba(0,0,0,0.55);
+      padding: 0.55rem 1.1rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.15);
+      backdrop-filter: blur(8px);
+      max-width: 90vw;
+      text-align: center;
+    }
+    @media (max-width: 720px) {
+      .lightbox { padding: 1rem; }
+      .lightbox-close { top: 0.75rem; right: 0.75rem; }
+      .lightbox-nav.prev { left: 0.5rem; }
+      .lightbox-nav.next { right: 0.5rem; }
+    }
+
     /* ============ CONTACT ============ */
     .contact-grid {
       display: grid;
@@ -815,6 +1288,18 @@
       }
       .about-portrait { max-width: 280px; margin: 0 auto; }
       section { padding: 5rem 1.25rem; }
+      .featured-project {
+        grid-template-columns: 1fr;
+        gap: 1.75rem;
+        padding: 1.25rem;
+        margin-bottom: 3rem;
+      }
+      .featured-image-wrap {
+        transform: none;
+        aspect-ratio: 16 / 11;
+      }
+      .featured-project:hover .featured-image-wrap { transform: scale(1.01); }
+      .showcase-grid { margin-bottom: 3rem; }
     }
     @media (max-width: 720px) {
       .nav-links {
@@ -862,6 +1347,7 @@
         <li role="none"><a href="#stack" class="nav-link" role="menuitem">Stack</a></li>
         <li role="none"><a href="#projects" class="nav-link" role="menuitem">Proyectos</a></li>
         <li role="none"><a href="#education" class="nav-link" role="menuitem">Educación</a></li>
+        <li role="none"><a href="#certifications" class="nav-link" role="menuitem">Certificaciones</a></li>
         <li role="none"><a href="#contact" class="nav-link" role="menuitem">Contacto</a></li>
       </ul>
       <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">
@@ -892,8 +1378,15 @@
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
         </a>
       </div>
+      <div class="hero-socials" aria-label="Redes sociales">
+        <a href="https://github.com/fabricoronil" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.71.08-.71 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.95.1-.74.4-1.25.73-1.54-2.55-.29-5.24-1.27-5.24-5.66 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.15 1.17.91-.25 1.89-.38 2.86-.38.97 0 1.95.13 2.86.38 2.18-1.48 3.14-1.17 3.14-1.17.62 1.58.23 2.75.11 3.04.74.8 1.18 1.82 1.18 3.07 0 4.4-2.69 5.36-5.25 5.65.41.36.78 1.05.78 2.12v3.14c0 .31.21.67.8.56C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/fabricio-coronil-43586a2ba/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+        </a>
+      </div>
     </div>
-    <div class="scroll-indicator" aria-hidden="true">Scroll</div>
   </header>
 
   <main>
@@ -951,36 +1444,51 @@
           <div class="stack-group">
             <h3><span>💻</span><span>Desarrollo Frontend</span></h3>
             <div class="badges">
-              <span class="badge"><span class="badge-dot"></span>HTML</span>
-              <span class="badge"><span class="badge-dot"></span>CSS</span>
-              <span class="badge"><span class="badge-dot"></span>JavaScript</span>
-              <span class="badge"><span class="badge-dot"></span>TypeScript</span>
-              <span class="badge"><span class="badge-dot"></span>React</span>
-              <span class="badge"><span class="badge-dot"></span>Tailwind CSS</span>
+              <span class="badge"><img class="badge-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="" loading="lazy" />HTML</span>
+              <span class="badge"><img class="badge-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="" loading="lazy" />CSS</span>
+              <span class="badge"><img class="badge-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="" loading="lazy" />JavaScript</span>
+              <span class="badge"><img class="badge-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" alt="" loading="lazy" />TypeScript</span>
+              <span class="badge"><img class="badge-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="" loading="lazy" />React</span>
+              <span class="badge"><img class="badge-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" alt="" loading="lazy" />Tailwind CSS</span>
+            </div>
+          </div>
+          <div class="stack-group">
+            <h3><span>⚙️</span><span>Desarrollo Backend</span></h3>
+            <div class="badges">
+              <span class="badge"><img class="badge-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" alt="" loading="lazy" />Node.js</span>
+              <span class="badge"><img class="badge-icon badge-icon-invert" src="https://api.iconify.design/simple-icons:express.svg" alt="" loading="lazy" />Express</span>
+              <span class="badge"><img class="badge-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" alt="" loading="lazy" />TypeScript</span>
+              <span class="badge"><img class="badge-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" alt="" loading="lazy" />MongoDB</span>
+              <span class="badge"><img class="badge-icon badge-icon-invert" src="https://api.iconify.design/simple-icons:mongoose.svg" alt="" loading="lazy" />Mongoose</span>
+              <span class="badge"><img class="badge-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" alt="" loading="lazy" />MySQL</span>
+              <span class="badge"><img class="badge-icon badge-icon-invert" src="https://api.iconify.design/mdi:database.svg" alt="" loading="lazy" />SQL</span>
+              <span class="badge"><img class="badge-icon badge-icon-invert" src="https://api.iconify.design/mdi:database-outline.svg" alt="" loading="lazy" />NoSQL</span>
+              <span class="badge"><img class="badge-icon" src="https://api.iconify.design/logos:jwt-icon.svg" alt="" loading="lazy" />JWT</span>
+              <span class="badge"><img class="badge-icon badge-icon-invert" src="https://api.iconify.design/mdi:shield-lock.svg" alt="" loading="lazy" />bcryptjs</span>
             </div>
           </div>
           <div class="stack-group">
             <h3><span>🎨</span><span>Diseño & Herramientas Creativas</span></h3>
             <div class="badges">
-              <span class="badge"><span class="badge-dot"></span>Adobe Illustrator</span>
-              <span class="badge"><span class="badge-dot"></span>Adobe Photoshop</span>
-              <span class="badge"><span class="badge-dot"></span>Adobe Premiere Pro</span>
-              <span class="badge"><span class="badge-dot"></span>After Effects</span>
+              <span class="badge"><img class="badge-icon" src="https://api.iconify.design/logos:adobe-illustrator.svg" alt="" loading="lazy" />Adobe Illustrator</span>
+              <span class="badge"><img class="badge-icon" src="https://api.iconify.design/logos:adobe-photoshop.svg" alt="" loading="lazy" />Adobe Photoshop</span>
+              <span class="badge"><img class="badge-icon" src="https://api.iconify.design/logos:adobe-premiere.svg" alt="" loading="lazy" />Adobe Premiere Pro</span>
+              <span class="badge"><img class="badge-icon" src="https://api.iconify.design/logos:adobe-after-effects.svg" alt="" loading="lazy" />After Effects</span>
             </div>
           </div>
           <div class="stack-group">
             <h3><span>📊</span><span>Productividad</span></h3>
             <div class="badges">
-              <span class="badge"><span class="badge-dot"></span>Excel Avanzado</span>
-              <span class="badge"><span class="badge-dot"></span>Word Avanzado</span>
+              <span class="badge"><img class="badge-icon" src="https://api.iconify.design/vscode-icons:file-type-excel.svg" alt="" loading="lazy" />Excel Avanzado</span>
+              <span class="badge"><img class="badge-icon" src="https://api.iconify.design/vscode-icons:file-type-word.svg" alt="" loading="lazy" />Word Avanzado</span>
             </div>
           </div>
           <div class="stack-group">
             <h3><span>🛠</span><span>Otros</span></h3>
             <div class="badges">
-              <span class="badge"><span class="badge-dot"></span>Python</span>
-              <span class="badge"><span class="badge-dot"></span>Git</span>
-              <span class="badge"><span class="badge-dot"></span>GitHub</span>
+              <span class="badge"><img class="badge-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="" loading="lazy" />Python</span>
+              <span class="badge"><img class="badge-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-plain.svg" alt="" loading="lazy" />Git</span>
+              <span class="badge"><img class="badge-icon badge-icon-invert" src="https://api.iconify.design/mdi:github.svg" alt="" loading="lazy" />GitHub</span>
             </div>
           </div>
         </div>
@@ -993,11 +1501,142 @@
         <div class="section-head">
           <span class="section-tag">Proyectos</span>
           <h2 class="section-title" id="projects-title">Lo que estoy construyendo</h2>
-          <p class="section-subtitle">Repositorios obtenidos en vivo desde mi perfil de GitHub.</p>
+          <p class="section-subtitle">Una selección de mis proyectos más representativos en desarrollo y diseño.</p>
         </div>
-        <div class="projects-grid" id="projectsGrid" aria-live="polite" aria-busy="true">
-          <!-- Skeletons inyectados por JS -->
+
+        <article class="featured-project" aria-labelledby="featured-climatic-title">
+          <div class="featured-image-wrap">
+            <span class="featured-badge">Destacado</span>
+            <img src="imagenes/climatic.png" alt="Vista previa del sitio web Climatic — servicio de aire acondicionado y electricidad" loading="lazy" />
+          </div>
+          <div class="featured-content">
+            <span class="featured-tag">Landing Page · Cliente</span>
+            <h3 class="featured-title" id="featured-climatic-title">Climatic — Servicios Técnicos</h3>
+            <p class="featured-desc">
+              Sitio web profesional para una empresa de instalación, mantenimiento y reparación de sistemas de aire acondicionado y electricidad. Diseño moderno, responsivo y enfocado en conversión, con jerarquía visual clara para destacar los servicios y la solicitud de presupuestos.
+            </p>
+            <div class="featured-tech" aria-label="Tecnologías utilizadas">
+              <span><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="" loading="lazy" />HTML5</span>
+              <span><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="" loading="lazy" />CSS3</span>
+              <span><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="" loading="lazy" />JavaScript</span>
+              <span>Diseño UI/UX</span>
+              <span>Responsive</span>
+            </div>
+            <div class="featured-actions">
+              <a href="https://github.com/fabricoronil" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                Ver código
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <div class="projects-divider" role="separator" aria-label="Otros proyectos">
+          <span>Otros trabajos</span>
         </div>
+
+        <div class="showcase-grid" aria-label="Galería de proyectos">
+          <article class="showcase-card">
+            <div class="showcase-thumb">
+              <span class="showcase-chip">Landing</span>
+              <span class="showcase-arrow" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+              </span>
+              <img src="imagenes/tepoenciamosweb.png" alt="TePotenciamos — agencia digital, vista de hero" loading="lazy" />
+            </div>
+            <div class="showcase-body">
+              <h3 class="showcase-title">TePotenciamos</h3>
+              <p class="showcase-desc">
+                Sitio web para agencia digital que diseña piezas modernas y veloces. Hero con animación tipográfica, navegación clara y enfoque en conversión.
+              </p>
+              <div class="showcase-tech">
+                <span><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="" loading="lazy" />HTML5</span><span><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="" loading="lazy" />CSS3</span><span><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="" loading="lazy" />JavaScript</span><span>Animaciones</span>
+              </div>
+            </div>
+            <a href="https://github.com/fabricoronil" target="_blank" rel="noopener noreferrer" class="showcase-link" aria-label="Ver TePotenciamos">Ver proyecto</a>
+          </article>
+
+          <article class="showcase-card">
+            <div class="showcase-thumb">
+              <span class="showcase-chip">Dashboard</span>
+              <span class="showcase-arrow" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+              </span>
+              <img src="imagenes/tunegociopotenciado.png" alt="Tu Negocio Potenciado — sistema de gestión integral con métricas" loading="lazy" />
+            </div>
+            <div class="showcase-body">
+              <h3 class="showcase-title">Tu Negocio Potenciado</h3>
+              <p class="showcase-desc">
+                Plataforma de gestión integral para PyMEs: clientes, finanzas, inventario, cobranzas y métricas en vivo, con cobro vía QR y enlaces de pago automatizados.
+              </p>
+              <div class="showcase-tech">
+                <span>Dashboard</span><span>UI/UX</span><span>Data Viz</span><span>SaaS</span>
+              </div>
+            </div>
+            <a href="https://github.com/fabricoronil" target="_blank" rel="noopener noreferrer" class="showcase-link" aria-label="Ver Tu Negocio Potenciado">Ver proyecto</a>
+          </article>
+
+          <article class="showcase-card">
+            <div class="showcase-thumb">
+              <span class="showcase-chip">Web App</span>
+              <span class="showcase-arrow" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+              </span>
+              <img src="imagenes/webdeveterianaria.png" alt="Patitas Felices — sistema de gestión veterinaria, pantalla de inicio de sesión" loading="lazy" />
+            </div>
+            <div class="showcase-body">
+              <h3 class="showcase-title">Patitas Felices</h3>
+              <p class="showcase-desc">
+                Sistema de gestión veterinaria con autenticación, registro de pacientes y panel administrativo. Interfaz limpia y accesible para uso diario en clínicas.
+              </p>
+              <div class="showcase-tech">
+                <span><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="" loading="lazy" />HTML5</span><span><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="" loading="lazy" />CSS3</span><span><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="" loading="lazy" />JavaScript</span><span>Auth</span>
+              </div>
+            </div>
+            <a href="https://github.com/fabricoronil" target="_blank" rel="noopener noreferrer" class="showcase-link" aria-label="Ver Patitas Felices">Ver proyecto</a>
+          </article>
+
+          <article class="showcase-card">
+            <div class="showcase-thumb">
+              <span class="showcase-chip">E-commerce</span>
+              <span class="showcase-arrow" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+              </span>
+              <img src="imagenes/tiendaonlinepokestore.png" alt="PokeStore — tienda online de Pokémon, vista de bienvenida" loading="lazy" />
+            </div>
+            <div class="showcase-body">
+              <h3 class="showcase-title">PokeStore</h3>
+              <p class="showcase-desc">
+                Tienda online de Pokémon desarrollada como proyecto final del curso de Frontend Developer en la UTN. Permite explorar, marcar favoritos y simular compras en un entorno interactivo.
+              </p>
+              <div class="showcase-tech">
+                <span><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="" loading="lazy" />HTML5</span><span><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="" loading="lazy" />CSS3</span><span><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="" loading="lazy" />JavaScript</span><span>UTN</span>
+              </div>
+            </div>
+            <a href="https://github.com/fabricoronil" target="_blank" rel="noopener noreferrer" class="showcase-link" aria-label="Ver PokeStore">Ver proyecto</a>
+          </article>
+
+          <article class="showcase-card">
+            <div class="showcase-thumb">
+              <span class="showcase-chip">Web3</span>
+              <span class="showcase-arrow" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+              </span>
+              <img src="imagenes/oxychain.png" alt="OxyChain — marketplace de créditos de carbono Web3" loading="lazy" />
+            </div>
+            <div class="showcase-body">
+              <h3 class="showcase-title">OxyChain</h3>
+              <p class="showcase-desc">
+                Plataforma Web3 de créditos de carbono que permite compensar la huella ambiental con total transparencia. Integra wallet, marketplace y ranking en tiempo real.
+              </p>
+              <div class="showcase-tech">
+                <span>Web3</span><span>Blockchain</span><span>UI/UX</span><span>Marketplace</span>
+              </div>
+            </div>
+            <a href="https://github.com/fabricoronil" target="_blank" rel="noopener noreferrer" class="showcase-link" aria-label="Ver OxyChain">Ver proyecto</a>
+          </article>
+        </div>
+
       </div>
     </section>
 
@@ -1023,9 +1662,171 @@
               <span class="course-chip">Sistemas Operativos</span>
             </div>
           </div>
+          <div class="timeline-item">
+            <div class="timeline-meta">Curso completado</div>
+            <h3>Desarrollo Web Full Stack</h3>
+            <p><strong>Universidad Tecnológica Nacional (UTN)</strong> — Curso intensivo de desarrollo web cubriendo frontend y backend, con foco en construir aplicaciones web completas de extremo a extremo.</p>
+            <div class="courses">
+              <span class="course-chip">HTML & CSS</span>
+              <span class="course-chip">JavaScript</span>
+              <span class="course-chip">Frontend</span>
+              <span class="course-chip">Backend</span>
+              <span class="course-chip">APIs REST</span>
+              <span class="course-chip">Bases de Datos</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
+
+    <!-- ============ CERTIFICATIONS ============ -->
+    <section id="certifications" class="reveal" aria-labelledby="cert-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-tag">Certificaciones</span>
+          <h2 class="section-title" id="cert-title">Formación complementaria</h2>
+          <p class="section-subtitle">Cursos, diplomaturas y programas que respaldan mi recorrido profesional.</p>
+        </div>
+        <div class="cert-grid" id="certGrid">
+
+          <button type="button" class="cert-card" data-cert-src="imagenesdecertificaciones/Captura%20de%20pantalla%202026-04-29%20091250.png" data-cert-caption="Diplomatura en Programación Web Full Stack — UTN (2026)">
+            <div class="cert-thumb">
+              <span class="cert-grade">Aprobado</span>
+              <span class="cert-zoom" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
+              </span>
+              <img src="imagenesdecertificaciones/Captura%20de%20pantalla%202026-04-29%20091250.png" alt="Certificado de la Diplomatura en Programación Web Full Stack — UTN" loading="lazy" />
+            </div>
+            <div class="cert-body">
+              <span class="cert-issuer">UTN · Centro de e-Learning</span>
+              <h3 class="cert-name">Diplomatura en Programación Web Full Stack</h3>
+              <div class="cert-meta">
+                <span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                  186 hs
+                </span>
+                <span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/></svg>
+                  Feb 2026
+                </span>
+              </div>
+            </div>
+          </button>
+
+          <button type="button" class="cert-card" data-cert-src="imagenesdecertificaciones/Captura%20de%20pantalla%202026-04-29%20091238.png" data-cert-caption="Curso de Backend Developer — UTN (2026)">
+            <div class="cert-thumb">
+              <span class="cert-grade">Excelente</span>
+              <span class="cert-zoom" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
+              </span>
+              <img src="imagenesdecertificaciones/Captura%20de%20pantalla%202026-04-29%20091238.png" alt="Certificado del curso de Backend Developer — UTN" loading="lazy" />
+            </div>
+            <div class="cert-body">
+              <span class="cert-issuer">UTN · Centro de e-Learning</span>
+              <h3 class="cert-name">Backend Developer — Turno Noche</h3>
+              <div class="cert-meta">
+                <span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                  93 hs
+                </span>
+                <span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/></svg>
+                  Feb 2026
+                </span>
+              </div>
+            </div>
+          </button>
+
+          <button type="button" class="cert-card" data-cert-src="imagenesdecertificaciones/Captura%20de%20pantalla%202026-04-29%20091206.png" data-cert-caption="Programador Web Inicial - Front End Developer — UTN (2025)">
+            <div class="cert-thumb">
+              <span class="cert-grade">Sobresaliente</span>
+              <span class="cert-zoom" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
+              </span>
+              <img src="imagenesdecertificaciones/Captura%20de%20pantalla%202026-04-29%20091206.png" alt="Certificado de Programador Web Inicial - Front End Developer — UTN" loading="lazy" />
+            </div>
+            <div class="cert-body">
+              <span class="cert-issuer">UTN · Centro de e-Learning</span>
+              <h3 class="cert-name">Programador Web Inicial — Front End Developer</h3>
+              <div class="cert-meta">
+                <span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                  93 hs
+                </span>
+                <span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/></svg>
+                  Oct 2025
+                </span>
+              </div>
+            </div>
+          </button>
+
+          <button type="button" class="cert-card" data-cert-src="imagenesdecertificaciones/Captura%20de%20pantalla%202026-04-29%20091228.png" data-cert-caption="Desarrollo web en HTML5, CSS3 y JavaScript (nivel avanzado) — UTN (2025)">
+            <div class="cert-thumb">
+              <span class="cert-grade">Aprobado</span>
+              <span class="cert-zoom" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
+              </span>
+              <img src="imagenesdecertificaciones/Captura%20de%20pantalla%202026-04-29%20091228.png" alt="Certificado de Desarrollo web en HTML5, CSS3 y JavaScript nivel avanzado — UTN" loading="lazy" />
+            </div>
+            <div class="cert-body">
+              <span class="cert-issuer">UTN · Centro de e-Learning</span>
+              <h3 class="cert-name">Desarrollo Web — HTML5, CSS3 y JavaScript (Avanzado)</h3>
+              <div class="cert-meta">
+                <span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                  67 hs
+                </span>
+                <span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/></svg>
+                  Nov 2025
+                </span>
+              </div>
+            </div>
+          </button>
+
+          <button type="button" class="cert-card" data-cert-src="imagenesdecertificaciones/Captura%20de%20pantalla%202026-04-29%20091300.png" data-cert-caption="Programa Ejecutivo de Habilidades Sociales para Startups y Emprendedores — Silicon Misiones / Municipalidad de Posadas (2025)">
+            <div class="cert-thumb">
+              <span class="cert-grade">Participación</span>
+              <span class="cert-zoom" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
+              </span>
+              <img src="imagenesdecertificaciones/Captura%20de%20pantalla%202026-04-29%20091300.png" alt="Certificado del Programa Ejecutivo de Habilidades Sociales para Startups y Emprendedores — Silicon Misiones" loading="lazy" />
+            </div>
+            <div class="cert-body">
+              <span class="cert-issuer">Silicon Misiones · Posadas</span>
+              <h3 class="cert-name">Habilidades Sociales para Startups y Emprendedores</h3>
+              <div class="cert-meta">
+                <span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                  4 encuentros
+                </span>
+                <span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/></svg>
+                  Sep 2025
+                </span>
+              </div>
+            </div>
+          </button>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ LIGHTBOX ============ -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visor de certificados" aria-hidden="true">
+      <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Cerrar">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+      </button>
+      <button type="button" class="lightbox-nav prev" id="lightboxPrev" aria-label="Anterior">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+      </button>
+      <img class="lightbox-image" id="lightboxImage" alt="" />
+      <button type="button" class="lightbox-nav next" id="lightboxNext" aria-label="Siguiente">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+      </button>
+      <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
 
     <!-- ============ CONTACT ============ -->
     <section id="contact" class="reveal" aria-labelledby="contact-title">
@@ -1248,144 +2049,67 @@
       document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     })();
 
-    /* ============ GITHUB PROJECTS ============ */
+    /* ============ CERT LIGHTBOX ============ */
     (() => {
-      const grid = document.getElementById('projectsGrid');
-      const langColors = {
-        JavaScript: { bg: 'rgba(255,255,255,0.92)', fg: '#0a0a0a' },
-        TypeScript: { bg: 'rgba(255,255,255,0.78)', fg: '#0a0a0a' },
-        Python:     { bg: 'rgba(255,255,255,0.62)', fg: '#0a0a0a' },
-        HTML:       { bg: 'rgba(255,255,255,0.48)', fg: '#0a0a0a' },
-        CSS:        { bg: 'rgba(255,255,255,0.36)', fg: '#0a0a0a' },
-        Shell:      { bg: 'rgba(255,255,255,0.24)', fg: '#ffffff' },
-      };
-      const otherColor = { bg: 'rgba(255,255,255,0.10)', fg: '#cfcfcf' };
+      const cards = document.querySelectorAll('.cert-card');
+      const lightbox = document.getElementById('lightbox');
+      const image = document.getElementById('lightboxImage');
+      const caption = document.getElementById('lightboxCaption');
+      const btnClose = document.getElementById('lightboxClose');
+      const btnPrev = document.getElementById('lightboxPrev');
+      const btnNext = document.getElementById('lightboxNext');
 
-      const projectIcons = ['🚀','✨','⚡','🎯','🛠','🔮','💡','🎨','📦','🧩','🌐','🔧'];
+      if (!cards.length || !lightbox) return;
 
-      function titleCase(str) {
-        return str.replace(/[-_]/g, ' ')
-          .replace(/\b\w/g, c => c.toUpperCase());
+      const items = Array.from(cards).map(c => ({
+        src: c.dataset.certSrc,
+        caption: c.dataset.certCaption || ''
+      }));
+      let current = 0;
+      let lastFocus = null;
+
+      function show(index) {
+        current = (index + items.length) % items.length;
+        const it = items[current];
+        image.src = it.src;
+        image.alt = it.caption;
+        caption.textContent = it.caption;
       }
 
-      function escapeHTML(str) {
-        const map = { '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' };
-        return String(str).replace(/[&<>"']/g, c => map[c]);
+      function open(index) {
+        lastFocus = document.activeElement;
+        show(index);
+        lightbox.classList.add('open');
+        lightbox.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        btnClose.focus();
       }
 
-      function renderSkeletons(n = 6) {
-        grid.innerHTML = Array.from({ length: n }).map(() => `
-          <div class="skeleton" aria-hidden="true">
-            <div class="skel-line tall short"></div>
-            <div class="skel-line"></div>
-            <div class="skel-line"></div>
-            <div class="skel-line short"></div>
-          </div>
-        `).join('');
+      function close() {
+        lightbox.classList.remove('open');
+        lightbox.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        if (lastFocus) lastFocus.focus();
       }
 
-      function renderError(msg = 'No pude conectar con la API de GitHub. Probá refrescar en unos segundos.') {
-        grid.innerHTML = `
-          <div class="error-state">
-            <span class="emoji">🛰</span>
-            <h3>Algo salió mal</h3>
-            <p>${escapeHTML(msg)}</p>
-            <p style="margin-top:1rem">
-              Mientras tanto, podés visitar mi perfil de GitHub:
-              <a href="https://github.com/fabricoronil" target="_blank" rel="noopener noreferrer" style="color:var(--accent);font-weight:600">
-                github.com/fabricoronil
-              </a>
-            </p>
-          </div>
-        `;
-      }
+      cards.forEach((card, i) => {
+        card.addEventListener('click', () => open(i));
+      });
 
-      function renderEmpty() {
-        grid.innerHTML = `
-          <div class="error-state">
-            <span class="emoji">🌱</span>
-            <h3>Pronto habrá proyectos acá</h3>
-            <p>Estoy preparando algunos repositorios públicos. Volvé a chequear pronto.</p>
-          </div>
-        `;
-      }
+      btnClose.addEventListener('click', close);
+      btnPrev.addEventListener('click', () => show(current - 1));
+      btnNext.addEventListener('click', () => show(current + 1));
 
-      function attachCursorTracking() {
-        grid.querySelectorAll('.project-card').forEach(card => {
-          card.addEventListener('mousemove', (e) => {
-            const r = card.getBoundingClientRect();
-            const x = ((e.clientX - r.left) / r.width) * 100;
-            const y = ((e.clientY - r.top) / r.height) * 100;
-            card.style.setProperty('--mx', `${x}%`);
-            card.style.setProperty('--my', `${y}%`);
-          });
-        });
-      }
+      lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) close();
+      });
 
-      function renderRepos(repos) {
-        if (!repos.length) return renderEmpty();
-        grid.setAttribute('aria-busy', 'false');
-        grid.innerHTML = repos.map((r, i) => {
-          const langs = [];
-          if (r.language) langs.push(r.language);
-          const langBadges = langs.map(l => {
-            const c = langColors[l] || otherColor;
-            return `<span class="lang-badge" style="background:${c.bg};color:${c.fg}">${escapeHTML(l)}</span>`;
-          }).join('');
-
-          const desc = r.description && r.description.trim()
-            ? r.description
-            : 'Proyecto personal de Fabricio Coronil.';
-
-          return `
-            <article class="project-card">
-              <div class="project-header">
-                <span class="project-icon" aria-hidden="true">${projectIcons[i % projectIcons.length]}</span>
-                <h3 class="project-name">${escapeHTML(titleCase(r.name))}</h3>
-              </div>
-              <p class="project-desc">${escapeHTML(desc)}</p>
-              <div class="project-langs">${langBadges || `<span class="lang-badge" style="background:${otherColor.bg};color:${otherColor.fg}">Otro</span>`}</div>
-              <div class="project-meta">
-                <span class="meta-item" title="Estrellas" aria-label="${r.stargazers_count} estrellas">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                  ${r.stargazers_count}
-                </span>
-                <span class="meta-item" title="Forks" aria-label="${r.forks_count} forks">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><circle cx="18" cy="6" r="3"/><path d="M18 9v1a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V9"/><path d="M12 12v3"/></svg>
-                  ${r.forks_count}
-                </span>
-                <a href="${r.html_url}" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Ver ${escapeHTML(r.name)} en GitHub">
-                  Ver en GitHub
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
-                </a>
-              </div>
-            </article>
-          `;
-        }).join('');
-        attachCursorTracking();
-      }
-
-      async function load() {
-        renderSkeletons();
-        try {
-          const res = await fetch('https://api.github.com/users/fabricoronil/repos?sort=updated&per_page=12', {
-            headers: { 'Accept': 'application/vnd.github+json' }
-          });
-          if (!res.ok) {
-            if (res.status === 403) throw new Error('Llegamos al límite temporal de la API de GitHub. Probá nuevamente en unos minutos.');
-            throw new Error(`Respuesta inesperada (${res.status}).`);
-          }
-          const data = await res.json();
-          if (!Array.isArray(data)) throw new Error('Formato de respuesta inesperado.');
-          const repos = data.filter(r => !r.fork);
-          renderRepos(repos);
-        } catch (err) {
-          console.error(err);
-          renderError(err.message);
-        }
-      }
-
-      load();
+      document.addEventListener('keydown', (e) => {
+        if (!lightbox.classList.contains('open')) return;
+        if (e.key === 'Escape') close();
+        else if (e.key === 'ArrowLeft') show(current - 1);
+        else if (e.key === 'ArrowRight') show(current + 1);
+      });
     })();
 
     /* ============ CONTACT FORM (mailto) ============ */
