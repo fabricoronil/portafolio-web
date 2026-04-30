@@ -1,29 +1,35 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#0a0a0f" />
 
   <title>Fabricio Coronil — Estudiante de Ingeniería en Sistemas & Frontend Developer</title>
-  <meta name="description" content="Portafolio de Fabricio Coronil, estudiante de Ingeniería en Sistemas en la Universidad de la Cuenca del Plata, desarrollador frontend en formación con experiencia en React, TypeScript y Adobe Creative Suite." />
+  <meta name="description"
+    content="Portafolio de Fabricio Coronil, estudiante de Ingeniería en Sistemas en la Universidad de la Cuenca del Plata, desarrollador frontend en formación con experiencia en React, TypeScript y Adobe Creative Suite." />
   <meta name="author" content="Fabricio Coronil" />
-  <meta name="keywords" content="Fabricio Coronil, Frontend Developer, Ingeniería en Sistemas, React, TypeScript, Tailwind, Portafolio, Universidad de la Cuenca del Plata" />
+  <meta name="keywords"
+    content="Fabricio Coronil, Frontend Developer, Ingeniería en Sistemas, React, TypeScript, Tailwind, Portafolio, Universidad de la Cuenca del Plata" />
 
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Fabricio Coronil — Frontend Developer & Estudiante de Ingeniería" />
-  <meta property="og:description" content="Portafolio profesional de Fabricio Coronil. Diseño y desarrollo web con sensibilidad visual." />
+  <meta property="og:description"
+    content="Portafolio profesional de Fabricio Coronil. Diseño y desarrollo web con sensibilidad visual." />
   <meta property="og:image" content="https://avatars.githubusercontent.com/fabricoronil" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Fabricio Coronil — Portafolio" />
   <meta name="twitter:description" content="Estudiante de Ingeniería en Sistemas | Frontend Developer en formación" />
 
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%92%BB%3C/text%3E%3C/svg%3E" />
+  <link rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%92%BB%3C/text%3E%3C/svg%3E" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
 
   <style>
     /* ============ TOKENS ============ */
@@ -46,7 +52,7 @@
       --secondary: #cfcfcf;
       --secondary-soft: rgba(207, 207, 207, 0.12);
 
-      --grad-line: linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent);
+      --grad-line: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
       --grad-mono: linear-gradient(135deg, #ffffff 0%, #a0a0a0 50%, #4a4a4a 100%);
       --grad-text: linear-gradient(180deg, #ffffff 0%, #8a8a8a 100%);
 
@@ -61,8 +67,18 @@
     }
 
     /* ============ RESET ============ */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: var(--font-body);
       background: var(--bg-0);
@@ -73,27 +89,80 @@
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
     }
-    h1, h2, h3, h4 { font-family: var(--font-head); line-height: 1.15; letter-spacing: -0.02em; font-weight: 700; }
-    a { color: inherit; text-decoration: none; transition: color var(--transition); }
-    button { font-family: inherit; cursor: pointer; border: none; background: none; color: inherit; }
-    img { max-width: 100%; display: block; }
-    ul { list-style: none; }
-    section { padding: 7rem 1.5rem; position: relative; }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: var(--font-head);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      font-weight: 700;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: color var(--transition);
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+      border: none;
+      background: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    section {
+      padding: 7rem 1.5rem;
+      position: relative;
+    }
 
     /* ============ SCROLLBAR ============ */
-    ::-webkit-scrollbar { width: 10px; }
-    ::-webkit-scrollbar-track { background: var(--bg-0); }
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--bg-0);
+    }
+
     ::-webkit-scrollbar-thumb {
       background: linear-gradient(180deg, #ffffff, #555555);
       border-radius: 10px;
       border: 2px solid var(--bg-0);
     }
-    ::-webkit-scrollbar-thumb:hover { background: #ffffff; }
-    ::selection { background: #ffffff; color: #000000; }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #ffffff;
+    }
+
+    ::selection {
+      background: #ffffff;
+      color: #000000;
+    }
 
     /* ============ LAYOUT ============ */
-    .container { max-width: var(--max); margin: 0 auto; }
-    .section-head { text-align: center; margin-bottom: 4rem; }
+    .container {
+      max-width: var(--max);
+      margin: 0 auto;
+    }
+
+    .section-head {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
     .section-tag {
       display: inline-block;
       font-size: 0.7rem;
@@ -103,10 +172,11 @@
       padding: 0.35rem 0.85rem;
       border: 1px solid var(--border-strong);
       border-radius: 999px;
-      background: rgba(255,255,255,0.04);
+      background: rgba(255, 255, 255, 0.04);
       margin-bottom: 1rem;
       font-weight: 500;
     }
+
     .section-title {
       font-size: clamp(1.6rem, 3vw, 2.25rem);
       font-weight: 700;
@@ -116,40 +186,54 @@
       -webkit-text-fill-color: transparent;
       margin-bottom: 0.75rem;
     }
-    .section-subtitle { color: var(--text-dim); max-width: 580px; margin: 0 auto; font-size: 0.88rem; }
+
+    .section-subtitle {
+      color: var(--text-dim);
+      max-width: 580px;
+      margin: 0 auto;
+      font-size: 0.88rem;
+    }
 
     /* ============ NAVBAR ============ */
     .navbar {
       position: fixed;
-      top: 0; left: 0; right: 0;
+      top: 0;
+      left: 0;
+      right: 0;
       z-index: 100;
       padding: 0.85rem 1.5rem;
       backdrop-filter: blur(20px) saturate(1.4);
       -webkit-backdrop-filter: blur(20px) saturate(1.4);
       background: rgba(5, 5, 5, 0.45);
       border-bottom: 1px solid transparent;
-      transition: background 0.5s cubic-bezier(.4,0,.2,1),
-                  padding 0.5s cubic-bezier(.4,0,.2,1),
-                  border-color 0.5s cubic-bezier(.4,0,.2,1),
-                  box-shadow 0.5s cubic-bezier(.4,0,.2,1);
+      transition: background 0.5s cubic-bezier(.4, 0, .2, 1),
+        padding 0.5s cubic-bezier(.4, 0, .2, 1),
+        border-color 0.5s cubic-bezier(.4, 0, .2, 1),
+        box-shadow 0.5s cubic-bezier(.4, 0, .2, 1);
     }
+
     .navbar::after {
       content: '';
       position: absolute;
-      bottom: -1px; left: 0; right: 0;
+      bottom: -1px;
+      left: 0;
+      right: 0;
       height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.0), transparent);
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.0), transparent);
       transition: background 0.6s ease;
     }
+
     .navbar.scrolled {
       background: rgba(5, 5, 5, 0.82);
       padding: 0.65rem 1.5rem;
-      border-bottom-color: rgba(255,255,255,0.06);
-      box-shadow: 0 4px 30px -4px rgba(0,0,0,0.5), 0 1px 0 0 rgba(255,255,255,0.03) inset;
+      border-bottom-color: rgba(255, 255, 255, 0.06);
+      box-shadow: 0 4px 30px -4px rgba(0, 0, 0, 0.5), 0 1px 0 0 rgba(255, 255, 255, 0.03) inset;
     }
+
     .navbar.scrolled::after {
-      background: linear-gradient(90deg, transparent 5%, rgba(255,255,255,0.12) 30%, rgba(255,255,255,0.18) 50%, rgba(255,255,255,0.12) 70%, transparent 95%);
+      background: linear-gradient(90deg, transparent 5%, rgba(255, 255, 255, 0.12) 30%, rgba(255, 255, 255, 0.18) 50%, rgba(255, 255, 255, 0.12) 70%, transparent 95%);
     }
+
     .nav-inner {
       max-width: var(--max);
       margin: 0 auto;
@@ -157,6 +241,7 @@
       align-items: center;
       justify-content: space-between;
     }
+
     .logo {
       font-family: var(--font-head);
       font-weight: 700;
@@ -168,23 +253,43 @@
       transition: opacity 0.3s ease, transform 0.3s ease;
       position: relative;
     }
-    .logo:hover { opacity: 0.85; transform: translateY(-1px); }
+
+    .logo:hover {
+      opacity: 0.85;
+      transform: translateY(-1px);
+    }
+
     .logo-dot {
-      width: 10px; height: 10px;
+      width: 10px;
+      height: 10px;
       border-radius: 50%;
       background: radial-gradient(circle at 30% 30%, #ffffff, #888888);
-      box-shadow: 0 0 16px var(--accent-glow), 0 0 6px rgba(255,255,255,0.3);
+      box-shadow: 0 0 16px var(--accent-glow), 0 0 6px rgba(255, 255, 255, 0.3);
       animation: logoPulse 2.8s ease-in-out infinite;
     }
+
     @keyframes logoPulse {
-      0%, 100% { opacity: 1; transform: scale(1); box-shadow: 0 0 16px var(--accent-glow), 0 0 6px rgba(255,255,255,0.3); }
-      50% { opacity: 0.55; transform: scale(1.3); box-shadow: 0 0 24px var(--accent-glow), 0 0 12px rgba(255,255,255,0.5); }
+
+      0%,
+      100% {
+        opacity: 1;
+        transform: scale(1);
+        box-shadow: 0 0 16px var(--accent-glow), 0 0 6px rgba(255, 255, 255, 0.3);
+      }
+
+      50% {
+        opacity: 0.55;
+        transform: scale(1.3);
+        box-shadow: 0 0 24px var(--accent-glow), 0 0 12px rgba(255, 255, 255, 0.5);
+      }
     }
+
     .nav-links {
       display: flex;
       gap: 0.35rem;
       align-items: center;
     }
+
     .nav-link {
       color: var(--text-dim);
       font-size: 0.78rem;
@@ -195,44 +300,55 @@
       transition: color 0.3s ease, background 0.3s ease;
       letter-spacing: 0.01em;
     }
+
     .nav-link::before {
       content: '';
       position: absolute;
       inset: 0;
       border-radius: 8px;
-      background: rgba(255,255,255,0.0);
+      background: rgba(255, 255, 255, 0.0);
       transition: background 0.3s ease;
       pointer-events: none;
     }
+
     .nav-link::after {
       content: '';
       position: absolute;
-      bottom: 2px; left: 50%;
-      width: 0; height: 2px;
+      bottom: 2px;
+      left: 50%;
+      width: 0;
+      height: 2px;
       border-radius: 2px;
       background: linear-gradient(90deg, transparent, #ffffff, transparent);
       transform: translateX(-50%);
-      transition: width 0.35s cubic-bezier(.4,0,.2,1), box-shadow 0.35s ease;
+      transition: width 0.35s cubic-bezier(.4, 0, .2, 1), box-shadow 0.35s ease;
     }
+
     .nav-link:hover {
       color: var(--text);
     }
+
     .nav-link:hover::before {
-      background: rgba(255,255,255,0.05);
+      background: rgba(255, 255, 255, 0.05);
     }
+
     .nav-link:hover::after {
       width: 60%;
     }
+
     .nav-link.active {
       color: #ffffff;
     }
+
     .nav-link.active::before {
-      background: rgba(255,255,255,0.07);
+      background: rgba(255, 255, 255, 0.07);
     }
+
     .nav-link.active::after {
       width: 70%;
-      box-shadow: 0 2px 10px -2px rgba(255,255,255,0.4);
+      box-shadow: 0 2px 10px -2px rgba(255, 255, 255, 0.4);
     }
+
     .hamburger {
       display: none;
       flex-direction: column;
@@ -243,19 +359,34 @@
       position: relative;
       z-index: 1000;
     }
+
     .hamburger:hover {
-      background: rgba(255,255,255,0.06);
+      background: rgba(255, 255, 255, 0.06);
     }
+
     .hamburger span {
-      width: 22px; height: 2px;
+      width: 22px;
+      height: 2px;
       background: var(--text);
       border-radius: 3px;
-      transition: transform 0.4s cubic-bezier(.4,0,.2,1), opacity 0.3s ease, width 0.3s ease;
+      transition: transform 0.4s cubic-bezier(.4, 0, .2, 1), opacity 0.3s ease, width 0.3s ease;
       transform-origin: center;
     }
-    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); width: 24px; }
-    .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
-    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); width: 24px; }
+
+    .hamburger.open span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+      width: 24px;
+    }
+
+    .hamburger.open span:nth-child(2) {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+
+    .hamburger.open span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+      width: 24px;
+    }
 
     /* ============ HERO ============ */
     .hero {
@@ -268,11 +399,13 @@
       position: relative;
       overflow: hidden;
     }
+
     #particles {
       position: absolute;
       inset: 0;
       z-index: 0;
     }
+
     .hero::before {
       content: '';
       position: absolute;
@@ -284,29 +417,43 @@
       pointer-events: none;
       animation: meshShift 14s ease-in-out infinite alternate;
     }
+
     @keyframes meshShift {
-      0%   { background-position: 0% 0%, 100% 100%; opacity: 1; }
-      50%  { opacity: 0.7; }
-      100% { background-position: 30% 20%, 70% 80%; opacity: 1; }
+      0% {
+        background-position: 0% 0%, 100% 100%;
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.7;
+      }
+
+      100% {
+        background-position: 30% 20%, 70% 80%;
+        opacity: 1;
+      }
     }
+
     .hero::after {
       content: '';
       position: absolute;
       inset: 0;
       background-image:
-        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+        linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
       background-size: 60px 60px;
       mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
       -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
       z-index: 1;
       pointer-events: none;
     }
+
     .hero-content {
       position: relative;
       z-index: 2;
       max-width: 880px;
     }
+
     .hero-greeting {
       display: inline-flex;
       align-items: center;
@@ -321,19 +468,31 @@
       letter-spacing: 0.05em;
       backdrop-filter: blur(10px);
     }
+
     .hero-greeting::before {
       content: '';
-      width: 8px; height: 8px;
+      width: 8px;
+      height: 8px;
       border-radius: 50%;
       background: #ffffff;
-      box-shadow: 0 0 0 0 rgba(255,255,255,0.4);
+      box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4);
       animation: greenPulse 2s infinite;
     }
+
     @keyframes greenPulse {
-      0%   { box-shadow: 0 0 0 0 rgba(255,255,255,0.55); }
-      70%  { box-shadow: 0 0 0 8px rgba(255,255,255,0); }
-      100% { box-shadow: 0 0 0 0 rgba(255,255,255,0); }
+      0% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.55);
+      }
+
+      70% {
+        box-shadow: 0 0 0 8px rgba(255, 255, 255, 0);
+      }
+
+      100% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+      }
     }
+
     .hero h1 {
       font-size: clamp(2rem, 5.5vw, 4rem);
       font-weight: 800;
@@ -345,10 +504,19 @@
       -webkit-text-fill-color: transparent;
       animation: gradientShift 8s ease-in-out infinite;
     }
+
     @keyframes gradientShift {
-      0%, 100% { background-position: 0% 50%; }
-      50%      { background-position: 100% 50%; }
+
+      0%,
+      100% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
     }
+
     .typewriter {
       font-size: clamp(0.9rem, 1.8vw, 1.1rem);
       color: var(--text-dim);
@@ -356,10 +524,12 @@
       min-height: 2.2em;
       font-weight: 500;
     }
+
     .typewriter-text {
       color: #ffffff;
       font-weight: 600;
     }
+
     .typewriter-text::after {
       content: '|';
       color: #ffffff;
@@ -367,25 +537,41 @@
       margin-left: 2px;
       font-weight: 400;
     }
-    @keyframes blink { 0%,49%{opacity:1} 50%,100%{opacity:0} }
+
+    @keyframes blink {
+
+      0%,
+      49% {
+        opacity: 1
+      }
+
+      50%,
+      100% {
+        opacity: 0
+      }
+    }
+
     .hero-desc {
       color: var(--text-dim);
       max-width: 560px;
       margin: 0 auto 2rem;
       font-size: 0.9rem;
     }
+
     .cta-row {
       display: flex;
       gap: 1rem;
       justify-content: center;
       flex-wrap: wrap;
     }
+
     .hero-socials {
       display: flex;
       gap: 0.85rem;
       justify-content: center;
       margin-top: 1.75rem;
     }
+
     .social-icon {
       width: 44px;
       height: 44px;
@@ -399,14 +585,20 @@
       backdrop-filter: blur(8px);
       transition: all var(--transition);
     }
-    .social-icon svg { width: 20px; height: 20px; }
+
+    .social-icon svg {
+      width: 20px;
+      height: 20px;
+    }
+
     .social-icon:hover {
       transform: translateY(-3px);
       border-color: #ffffff;
       color: #ffffff;
       background: var(--surface-strong);
-      box-shadow: 0 8px 20px -10px rgba(255,255,255,0.4);
+      box-shadow: 0 8px 20px -10px rgba(255, 255, 255, 0.4);
     }
+
     .btn {
       display: inline-flex;
       align-items: center;
@@ -420,38 +612,47 @@
       cursor: pointer;
       border: 1px solid transparent;
     }
+
     .btn-primary {
       background: linear-gradient(135deg, #ffffff 0%, #c8c8c8 100%);
       color: #050505;
-      box-shadow: 0 8px 30px -8px rgba(255,255,255,0.35);
+      box-shadow: 0 8px 30px -8px rgba(255, 255, 255, 0.35);
       position: relative;
       overflow: hidden;
     }
+
     .btn-primary::before {
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(120deg, transparent 30%, rgba(255,255,255,0.6) 50%, transparent 70%);
+      background: linear-gradient(120deg, transparent 30%, rgba(255, 255, 255, 0.6) 50%, transparent 70%);
       transform: translateX(-100%);
       transition: transform 0.7s ease;
     }
+
     .btn-primary:hover {
       transform: translateY(-3px);
-      box-shadow: 0 14px 40px -10px rgba(255,255,255,0.45);
+      box-shadow: 0 14px 40px -10px rgba(255, 255, 255, 0.45);
     }
-    .btn-primary:hover::before { transform: translateX(100%); }
+
+    .btn-primary:hover::before {
+      transform: translateX(100%);
+    }
+
     .btn-secondary {
       background: var(--surface);
       color: var(--text);
       border-color: var(--border-strong);
       backdrop-filter: blur(8px);
     }
+
     .btn-secondary:hover {
       border-color: #ffffff;
       color: #ffffff;
       transform: translateY(-3px);
       background: var(--surface-strong);
     }
+
     .scroll-indicator {
       position: absolute;
       bottom: 2rem;
@@ -465,7 +666,18 @@
       animation: floatY 2.4s ease-in-out infinite;
       writing-mode: vertical-rl;
     }
-    @keyframes floatY { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(8px)} }
+
+    @keyframes floatY {
+
+      0%,
+      100% {
+        transform: translateX(-50%) translateY(0)
+      }
+
+      50% {
+        transform: translateX(-50%) translateY(8px)
+      }
+    }
 
     /* ============ ABOUT ============ */
     .about-grid {
@@ -474,12 +686,13 @@
       gap: 3rem;
       align-items: center;
     }
+
     .about-portrait {
       position: relative;
       aspect-ratio: 1;
       border-radius: 24px;
       background:
-        radial-gradient(circle at 30% 20%, rgba(255,255,255,0.12), transparent 60%),
+        radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.12), transparent 60%),
         linear-gradient(135deg, #1a1a1a, #050505);
       border: 1px solid var(--border-strong);
       display: flex;
@@ -487,6 +700,7 @@
       justify-content: center;
       overflow: hidden;
     }
+
     .about-portrait::before {
       content: '';
       position: absolute;
@@ -498,23 +712,32 @@
       filter: blur(10px);
       opacity: 0.35;
     }
-    @keyframes spin { to { transform: rotate(360deg); } }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
     .about-emoji {
       font-size: clamp(5rem, 14vw, 9rem);
-      filter: grayscale(1) drop-shadow(0 8px 30px rgba(255,255,255,0.18));
+      filter: grayscale(1) drop-shadow(0 8px 30px rgba(255, 255, 255, 0.18));
     }
+
     .about-text p {
       color: var(--text-dim);
       font-size: 0.9rem;
       margin-bottom: 0.85rem;
       line-height: 1.7;
     }
+
     .about-stats {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 1rem;
       margin-top: 2rem;
     }
+
     .stat {
       padding: 1rem;
       background: var(--surface);
@@ -523,6 +746,7 @@
       text-align: center;
       backdrop-filter: blur(8px);
     }
+
     .stat-num {
       font-family: var(--font-head);
       font-size: 1.3rem;
@@ -532,6 +756,7 @@
       background-clip: text;
       -webkit-text-fill-color: transparent;
     }
+
     .stat-label {
       font-size: 0.65rem;
       color: var(--text-muted);
@@ -548,10 +773,11 @@
       max-width: 1100px;
       margin: 0 auto;
     }
+
     .stack-group {
       position: relative;
       padding: 1.75rem 1.5rem;
-      background: linear-gradient(180deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.015) 100%);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.015) 100%);
       border: 1px solid var(--border);
       border-radius: 18px;
       backdrop-filter: blur(10px);
@@ -560,20 +786,22 @@
       overflow: hidden;
       text-align: center;
     }
+
     .stack-group::before {
       content: "";
       position: absolute;
       inset: 0;
       border-radius: inherit;
       padding: 1px;
-      background: linear-gradient(135deg, rgba(255,255,255,0.18), rgba(255,255,255,0) 50%, rgba(255,255,255,0.08));
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.08));
       -webkit-mask: linear-gradient(#000, #000) content-box, linear-gradient(#000, #000);
-              mask: linear-gradient(#000, #000) content-box, linear-gradient(#000, #000);
+      mask: linear-gradient(#000, #000) content-box, linear-gradient(#000, #000);
       -webkit-mask-composite: xor;
-              mask-composite: exclude;
+      mask-composite: exclude;
       pointer-events: none;
       opacity: 0.7;
     }
+
     .stack-group::after {
       content: "";
       position: absolute;
@@ -582,18 +810,23 @@
       width: 220px;
       height: 220px;
       transform: translateX(-50%);
-      background: radial-gradient(circle, rgba(255,255,255,0.07) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.07) 0%, transparent 70%);
       pointer-events: none;
       opacity: 0;
       transition: opacity var(--transition);
     }
+
     .stack-group:hover {
       transform: translateY(-4px);
-      border-color: rgba(255,255,255,0.18);
-      background: linear-gradient(180deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%);
-      box-shadow: 0 18px 40px -20px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.04) inset;
+      border-color: rgba(255, 255, 255, 0.18);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%);
+      box-shadow: 0 18px 40px -20px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.04) inset;
     }
-    .stack-group:hover::after { opacity: 1; }
+
+    .stack-group:hover::after {
+      opacity: 1;
+    }
+
     .stack-group h3 {
       position: relative;
       font-size: 0.78rem;
@@ -608,6 +841,7 @@
       gap: 0.55rem;
       color: var(--text);
     }
+
     .stack-group h3::after {
       content: "";
       position: absolute;
@@ -616,12 +850,14 @@
       transform: translateX(-50%);
       width: 32px;
       height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
     }
+
     .stack-group h3 span:first-child {
       font-size: 1.1rem;
       filter: grayscale(0.1);
     }
+
     .badges {
       display: flex;
       flex-wrap: wrap;
@@ -629,10 +865,11 @@
       justify-content: center;
       position: relative;
     }
+
     .badge {
       padding: 0.5rem 0.95rem 0.5rem 0.55rem;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: 999px;
       font-size: 0.78rem;
       font-weight: 500;
@@ -645,19 +882,23 @@
       gap: 0.5rem;
       will-change: transform;
     }
+
     .badge:hover {
       transform: translateY(-3px) scale(1.04);
-      border-color: rgba(255,255,255,0.35);
+      border-color: rgba(255, 255, 255, 0.35);
       color: #ffffff;
-      background: rgba(255,255,255,0.08);
-      box-shadow: 0 10px 24px -12px rgba(255,255,255,0.25), 0 0 0 1px rgba(255,255,255,0.04) inset;
+      background: rgba(255, 255, 255, 0.08);
+      box-shadow: 0 10px 24px -12px rgba(255, 255, 255, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.04) inset;
     }
+
     .badge-dot {
-      width: 6px; height: 6px;
+      width: 6px;
+      height: 6px;
       border-radius: 50%;
       background: linear-gradient(135deg, #ffffff, #666666) !important;
-      box-shadow: 0 0 6px rgba(255,255,255,0.4);
+      box-shadow: 0 0 6px rgba(255, 255, 255, 0.4);
     }
+
     .badge-icon {
       width: 20px;
       height: 20px;
@@ -666,8 +907,15 @@
       flex-shrink: 0;
       transition: transform 220ms ease;
     }
-    .badge:hover .badge-icon { transform: scale(1.12) rotate(-4deg); }
-    .badge-icon-invert { filter: brightness(0) invert(1); }
+
+    .badge:hover .badge-icon {
+      transform: scale(1.12) rotate(-4deg);
+    }
+
+    .badge-icon-invert {
+      filter: brightness(0) invert(1);
+    }
+
     .tech-icon {
       width: 14px;
       height: 14px;
@@ -677,11 +925,17 @@
       margin-right: 0.35rem;
       flex-shrink: 0;
     }
+
     .showcase-tech span {
       display: inline-flex;
       align-items: center;
     }
-    .showcase-tech .tech-icon { width: 13px; height: 13px; margin-right: 0.35rem; }
+
+    .showcase-tech .tech-icon {
+      width: 13px;
+      height: 13px;
+      margin-right: 0.35rem;
+    }
 
     /* ============ PROJECTS ============ */
     .showcase-grid {
@@ -690,6 +944,7 @@
       gap: 1.75rem;
       margin-bottom: 4.5rem;
     }
+
     .showcase-card {
       position: relative;
       background: var(--surface);
@@ -697,19 +952,22 @@
       border-radius: var(--radius);
       overflow: hidden;
       backdrop-filter: blur(12px);
-      transition: transform 0.4s cubic-bezier(.2,.8,.2,1),
-                  border-color var(--transition),
-                  box-shadow var(--transition);
+      transition: transform 0.4s cubic-bezier(.2, .8, .2, 1),
+        border-color var(--transition),
+        box-shadow var(--transition);
       display: flex;
       flex-direction: column;
+      cursor: pointer;
     }
+
     .showcase-card:hover {
       transform: translateY(-8px);
-      border-color: rgba(255,255,255,0.28);
+      border-color: rgba(255, 255, 255, 0.28);
       box-shadow:
-        0 30px 60px -25px rgba(0,0,0,0.7),
-        0 0 0 1px rgba(255,255,255,0.05) inset;
+        0 30px 60px -25px rgba(0, 0, 0, 0.7),
+        0 0 0 1px rgba(255, 255, 255, 0.05) inset;
     }
+
     .showcase-thumb {
       position: relative;
       aspect-ratio: 16 / 10;
@@ -717,40 +975,51 @@
       background: var(--bg-1);
       border-bottom: 1px solid var(--border);
     }
+
     .showcase-thumb::after {
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.55));
+      background: linear-gradient(180deg, transparent 50%, rgba(0, 0, 0, 0.55));
       opacity: 0.7;
       transition: opacity var(--transition);
       pointer-events: none;
     }
-    .showcase-card:hover .showcase-thumb::after { opacity: 0.25; }
+
+    .showcase-card:hover .showcase-thumb::after {
+      opacity: 0.25;
+    }
+
     .showcase-thumb img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       object-position: top center;
-      transition: transform 0.7s cubic-bezier(.2,.8,.2,1);
+      transition: transform 0.7s cubic-bezier(.2, .8, .2, 1);
       display: block;
     }
-    .showcase-card:hover .showcase-thumb img { transform: scale(1.06); }
+
+    .showcase-card:hover .showcase-thumb img {
+      transform: scale(1.06);
+    }
+
     .showcase-chip {
       position: absolute;
-      top: 0.85rem; left: 0.85rem;
+      top: 0.85rem;
+      left: 0.85rem;
       z-index: 2;
       font-size: 0.6rem;
       letter-spacing: 0.2em;
       text-transform: uppercase;
       font-weight: 600;
       padding: 0.32rem 0.7rem;
-      background: rgba(5,5,5,0.78);
-      border: 1px solid rgba(255,255,255,0.2);
+      background: rgba(5, 5, 5, 0.78);
+      border: 1px solid rgba(255, 255, 255, 0.2);
       border-radius: 999px;
       backdrop-filter: blur(10px);
       color: #fff;
     }
+
     .showcase-body {
       padding: 1.65rem 1.75rem 1.85rem;
       display: flex;
@@ -758,6 +1027,7 @@
       gap: 0.85rem;
       flex-grow: 1;
     }
+
     .showcase-title {
       font-family: var(--font-head);
       font-size: 1.25rem;
@@ -765,12 +1035,14 @@
       color: var(--text);
       letter-spacing: -0.01em;
     }
+
     .showcase-desc {
       color: var(--text-dim);
       font-size: 0.92rem;
       line-height: 1.65;
       flex-grow: 1;
     }
+
     .showcase-tech {
       display: flex;
       flex-wrap: wrap;
@@ -779,6 +1051,7 @@
       border-top: 1px solid var(--border);
       margin-top: 0.35rem;
     }
+
     .showcase-tech span {
       font-size: 0.72rem;
       font-weight: 600;
@@ -789,6 +1062,7 @@
       color: var(--text-dim);
       letter-spacing: 0.02em;
     }
+
     .showcase-link {
       position: absolute;
       inset: 0;
@@ -796,34 +1070,43 @@
       text-indent: -9999px;
       overflow: hidden;
     }
+
     .showcase-arrow {
       position: absolute;
-      top: 0.85rem; right: 0.85rem;
+      top: 0.85rem;
+      right: 0.85rem;
       z-index: 2;
-      width: 34px; height: 34px;
+      width: 34px;
+      height: 34px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       border-radius: 50%;
-      background: rgba(5,5,5,0.78);
-      border: 1px solid rgba(255,255,255,0.2);
+      background: rgba(5, 5, 5, 0.78);
+      border: 1px solid rgba(255, 255, 255, 0.2);
       color: #fff;
       backdrop-filter: blur(10px);
       transition: all var(--transition);
       opacity: 0;
       transform: translateY(-4px);
     }
+
     .showcase-card:hover .showcase-arrow {
       opacity: 1;
       transform: translateY(0);
     }
-    .showcase-arrow svg { width: 14px; height: 14px; }
+
+    .showcase-arrow svg {
+      width: 14px;
+      height: 14px;
+    }
 
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
       gap: 1.5rem;
     }
+
     .project-card {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -837,23 +1120,25 @@
       position: relative;
       overflow: hidden;
     }
+
     .project-card::before {
       content: '';
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(circle at var(--mx, 50%) var(--my, 0%), rgba(255,255,255,0.10), transparent 45%);
+        radial-gradient(circle at var(--mx, 50%) var(--my, 0%), rgba(255, 255, 255, 0.10), transparent 45%);
       opacity: 0;
       transition: opacity var(--transition);
       pointer-events: none;
     }
+
     .project-card::after {
       content: '';
       position: absolute;
       inset: 0;
       border-radius: var(--radius);
       padding: 1px;
-      background: linear-gradient(135deg, rgba(255,255,255,0.4), transparent 40%, transparent 60%, rgba(255,255,255,0.2));
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.4), transparent 40%, transparent 60%, rgba(255, 255, 255, 0.2));
       -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
       mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
       -webkit-mask-composite: xor;
@@ -862,23 +1147,33 @@
       transition: opacity var(--transition);
       pointer-events: none;
     }
+
     .project-card:hover {
       transform: translateY(-6px);
       border-color: var(--border-strong);
-      box-shadow: 0 20px 40px -20px rgba(255,255,255,0.2), 0 0 0 1px rgba(255,255,255,0.05) inset;
+      box-shadow: 0 20px 40px -20px rgba(255, 255, 255, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.05) inset;
     }
-    .project-card:hover::before { opacity: 1; }
-    .project-card:hover::after { opacity: 1; }
+
+    .project-card:hover::before {
+      opacity: 1;
+    }
+
+    .project-card:hover::after {
+      opacity: 1;
+    }
+
     .project-header {
       display: flex;
       align-items: flex-start;
       justify-content: space-between;
       gap: 0.75rem;
     }
+
     .project-icon {
       font-size: 1.6rem;
       flex-shrink: 0;
     }
+
     .project-name {
       font-family: var(--font-head);
       font-size: 0.95rem;
@@ -886,17 +1181,20 @@
       color: var(--text);
       line-height: 1.3;
     }
+
     .project-desc {
       color: var(--text-dim);
       font-size: 0.82rem;
       line-height: 1.6;
       flex-grow: 1;
     }
+
     .project-langs {
       display: flex;
       flex-wrap: wrap;
       gap: 0.4rem;
     }
+
     .lang-badge {
       padding: 0.25rem 0.6rem;
       border-radius: 999px;
@@ -904,6 +1202,7 @@
       font-weight: 600;
       letter-spacing: 0.02em;
     }
+
     .project-meta {
       display: flex;
       align-items: center;
@@ -913,11 +1212,13 @@
       padding-top: 0.5rem;
       border-top: 1px solid var(--border);
     }
+
     .meta-item {
       display: inline-flex;
       align-items: center;
       gap: 0.35rem;
     }
+
     .project-link {
       display: inline-flex;
       align-items: center;
@@ -928,7 +1229,10 @@
       font-size: 0.75rem;
       transition: gap var(--transition);
     }
-    .project-link:hover { gap: 0.7rem; }
+
+    .project-link:hover {
+      gap: 0.7rem;
+    }
 
     /* ============ SKELETON ============ */
     .skeleton {
@@ -940,16 +1244,32 @@
       flex-direction: column;
       gap: 1rem;
     }
+
     .skel-line {
       height: 14px;
       border-radius: 6px;
-      background: linear-gradient(90deg, rgba(255,255,255,0.04), rgba(255,255,255,0.12), rgba(255,255,255,0.04));
+      background: linear-gradient(90deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.04));
       background-size: 200% 100%;
       animation: shimmer 1.4s infinite;
     }
-    .skel-line.short { width: 60%; }
-    .skel-line.tall { height: 22px; }
-    @keyframes shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+
+    .skel-line.short {
+      width: 60%;
+    }
+
+    .skel-line.tall {
+      height: 22px;
+    }
+
+    @keyframes shimmer {
+      0% {
+        background-position: 200% 0;
+      }
+
+      100% {
+        background-position: -200% 0;
+      }
+    }
 
     /* ============ ERROR STATE ============ */
     .error-state {
@@ -961,8 +1281,17 @@
       color: var(--text-dim);
       background: var(--surface);
     }
-    .error-state h3 { color: var(--text); margin-bottom: 0.5rem; }
-    .error-state .emoji { font-size: 2.5rem; margin-bottom: 1rem; display: block; }
+
+    .error-state h3 {
+      color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+
+    .error-state .emoji {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
 
     /* ============ EDUCATION ============ */
     .timeline {
@@ -971,6 +1300,7 @@
       margin: 0 auto;
       padding-left: 2rem;
     }
+
     .timeline::before {
       content: '';
       position: absolute;
@@ -981,6 +1311,7 @@
       background: linear-gradient(180deg, transparent, #ffffff 20%, #555555 80%, transparent);
       border-radius: 2px;
     }
+
     .timeline-item {
       position: relative;
       padding: 1.5rem 1.75rem;
@@ -990,22 +1321,26 @@
       backdrop-filter: blur(10px);
       margin-bottom: 1.5rem;
     }
+
     .timeline-item::before {
       content: '';
       position: absolute;
       left: -2.5rem;
       top: 1.75rem;
-      width: 14px; height: 14px;
+      width: 14px;
+      height: 14px;
       background: radial-gradient(circle at 30% 30%, #ffffff, #555555);
       border: 3px solid var(--bg-0);
       border-radius: 50%;
-      box-shadow: 0 0 14px rgba(255,255,255,0.35);
+      box-shadow: 0 0 14px rgba(255, 255, 255, 0.35);
       animation: pulse 3s ease-in-out infinite;
     }
+
     .timeline-item h3 {
       font-size: 1rem;
       margin-bottom: 0.25rem;
     }
+
     .timeline-meta {
       color: #ffffff;
       font-size: 0.7rem;
@@ -1014,12 +1349,19 @@
       font-weight: 600;
       margin-bottom: 0.6rem;
     }
-    .timeline-item p { color: var(--text-dim); margin-bottom: 1rem; font-size: 0.85rem; }
+
+    .timeline-item p {
+      color: var(--text-dim);
+      margin-bottom: 1rem;
+      font-size: 0.85rem;
+    }
+
     .courses {
       display: flex;
       flex-wrap: wrap;
       gap: 0.45rem;
     }
+
     .course-chip {
       padding: 0.3rem 0.75rem;
       background: var(--bg-2);
@@ -1035,6 +1377,7 @@
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
       gap: 1.25rem;
     }
+
     .cert-card {
       position: relative;
       background: var(--surface);
@@ -1042,26 +1385,29 @@
       border-radius: var(--radius);
       overflow: hidden;
       backdrop-filter: blur(10px);
-      transition: transform 0.4s cubic-bezier(.2,.8,.2,1),
-                  border-color var(--transition),
-                  box-shadow var(--transition);
+      transition: transform 0.4s cubic-bezier(.2, .8, .2, 1),
+        border-color var(--transition),
+        box-shadow var(--transition);
       cursor: zoom-in;
       display: flex;
       flex-direction: column;
       text-align: left;
       width: 100%;
     }
+
     .cert-card:hover {
       transform: translateY(-6px);
-      border-color: rgba(255,255,255,0.28);
+      border-color: rgba(255, 255, 255, 0.28);
       box-shadow:
-        0 25px 55px -25px rgba(0,0,0,0.7),
-        0 0 0 1px rgba(255,255,255,0.05) inset;
+        0 25px 55px -25px rgba(0, 0, 0, 0.7),
+        0 0 0 1px rgba(255, 255, 255, 0.05) inset;
     }
+
     .cert-card:focus-visible {
       outline: 2px solid #fff;
       outline-offset: 3px;
     }
+
     .cert-thumb {
       position: relative;
       aspect-ratio: 4 / 3;
@@ -1069,49 +1415,67 @@
       background: #f4f4f4;
       border-bottom: 1px solid var(--border);
     }
+
     .cert-thumb img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       object-position: top center;
-      transition: transform 0.7s cubic-bezier(.2,.8,.2,1);
+      transition: transform 0.7s cubic-bezier(.2, .8, .2, 1);
       display: block;
     }
-    .cert-card:hover .cert-thumb img { transform: scale(1.05); }
+
+    .cert-card:hover .cert-thumb img {
+      transform: scale(1.05);
+    }
+
     .cert-grade {
       position: absolute;
-      top: 0.7rem; right: 0.7rem;
+      top: 0.7rem;
+      right: 0.7rem;
       z-index: 2;
       font-size: 0.58rem;
       letter-spacing: 0.2em;
       text-transform: uppercase;
       font-weight: 700;
       padding: 0.32rem 0.7rem;
-      background: rgba(5,5,5,0.85);
-      border: 1px solid rgba(255,255,255,0.28);
+      background: rgba(5, 5, 5, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.28);
       border-radius: 999px;
       color: #fff;
       backdrop-filter: blur(8px);
     }
+
     .cert-zoom {
       position: absolute;
-      bottom: 0.7rem; right: 0.7rem;
+      bottom: 0.7rem;
+      right: 0.7rem;
       z-index: 2;
-      width: 34px; height: 34px;
+      width: 34px;
+      height: 34px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       border-radius: 50%;
-      background: rgba(5,5,5,0.85);
-      border: 1px solid rgba(255,255,255,0.28);
+      background: rgba(5, 5, 5, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.28);
       color: #fff;
       backdrop-filter: blur(8px);
       opacity: 0;
       transform: translateY(6px);
       transition: all var(--transition);
     }
-    .cert-card:hover .cert-zoom { opacity: 1; transform: translateY(0); }
-    .cert-zoom svg { width: 14px; height: 14px; }
+
+    .cert-card:hover .cert-zoom {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .cert-zoom svg {
+      width: 14px;
+      height: 14px;
+    }
+
     .cert-body {
       padding: 1.1rem 1.2rem 1.25rem;
       display: flex;
@@ -1119,6 +1483,7 @@
       gap: 0.45rem;
       flex-grow: 1;
     }
+
     .cert-issuer {
       display: inline-flex;
       align-items: center;
@@ -1129,11 +1494,14 @@
       font-weight: 700;
       color: var(--text-dim);
     }
+
     .cert-issuer::before {
       content: '';
-      width: 16px; height: 1px;
+      width: 16px;
+      height: 1px;
       background: linear-gradient(90deg, #ffffff, transparent);
     }
+
     .cert-name {
       font-family: var(--font-head);
       font-size: 0.92rem;
@@ -1142,6 +1510,7 @@
       line-height: 1.35;
       letter-spacing: -0.01em;
     }
+
     .cert-meta {
       display: flex;
       gap: 0.6rem;
@@ -1152,12 +1521,17 @@
       font-size: 0.7rem;
       color: var(--text-muted);
     }
+
     .cert-meta span {
       display: inline-flex;
       align-items: center;
       gap: 0.35rem;
     }
-    .cert-meta svg { width: 12px; height: 12px; }
+
+    .cert-meta svg {
+      width: 12px;
+      height: 12px;
+    }
 
     /* Lightbox */
     .lightbox {
@@ -1174,24 +1548,34 @@
       visibility: hidden;
       transition: opacity 0.3s ease, visibility 0.3s;
     }
-    .lightbox.open { opacity: 1; visibility: visible; }
+
+    .lightbox.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
     .lightbox-image {
       max-width: min(1100px, 92vw);
       max-height: 86vh;
       border-radius: 10px;
-      box-shadow: 0 30px 80px rgba(0,0,0,0.7);
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7);
       object-fit: contain;
       transform: scale(0.96);
-      transition: transform 0.35s cubic-bezier(.2,.8,.2,1);
+      transition: transform 0.35s cubic-bezier(.2, .8, .2, 1);
     }
-    .lightbox.open .lightbox-image { transform: scale(1); }
+
+    .lightbox.open .lightbox-image {
+      transform: scale(1);
+    }
+
     .lightbox-close,
     .lightbox-nav {
       position: absolute;
-      width: 46px; height: 46px;
+      width: 46px;
+      height: 46px;
       border-radius: 50%;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.25);
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.25);
       color: #fff;
       cursor: pointer;
       display: inline-flex;
@@ -1200,21 +1584,35 @@
       backdrop-filter: blur(10px);
       transition: all var(--transition);
     }
-    .lightbox-close { top: 1.25rem; right: 1.25rem; }
+
+    .lightbox-close {
+      top: 1.25rem;
+      right: 1.25rem;
+    }
+
     .lightbox-close:hover {
-      background: rgba(255,255,255,0.2);
+      background: rgba(255, 255, 255, 0.2);
       transform: rotate(90deg);
     }
+
     .lightbox-nav {
       top: 50%;
       transform: translateY(-50%);
     }
-    .lightbox-nav.prev { left: 1.25rem; }
-    .lightbox-nav.next { right: 1.25rem; }
+
+    .lightbox-nav.prev {
+      left: 1.25rem;
+    }
+
+    .lightbox-nav.next {
+      right: 1.25rem;
+    }
+
     .lightbox-nav:hover {
-      background: rgba(255,255,255,0.2);
+      background: rgba(255, 255, 255, 0.2);
       transform: translateY(-50%) scale(1.08);
     }
+
     .lightbox-caption {
       position: absolute;
       bottom: 1.5rem;
@@ -1223,19 +1621,32 @@
       color: #fff;
       font-size: 0.78rem;
       letter-spacing: 0.05em;
-      background: rgba(0,0,0,0.55);
+      background: rgba(0, 0, 0, 0.55);
       padding: 0.55rem 1.1rem;
       border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.15);
+      border: 1px solid rgba(255, 255, 255, 0.15);
       backdrop-filter: blur(8px);
       max-width: 90vw;
       text-align: center;
     }
+
     @media (max-width: 720px) {
-      .lightbox { padding: 1rem; }
-      .lightbox-close { top: 0.75rem; right: 0.75rem; }
-      .lightbox-nav.prev { left: 0.5rem; }
-      .lightbox-nav.next { right: 0.5rem; }
+      .lightbox {
+        padding: 1rem;
+      }
+
+      .lightbox-close {
+        top: 0.75rem;
+        right: 0.75rem;
+      }
+
+      .lightbox-nav.prev {
+        left: 0.5rem;
+      }
+
+      .lightbox-nav.next {
+        right: 0.5rem;
+      }
     }
 
     /* ============ CONTACT ============ */
@@ -1245,8 +1656,19 @@
       gap: 3rem;
       align-items: start;
     }
-    .contact-info p { color: var(--text-dim); margin-bottom: 1.75rem; font-size: 0.88rem; }
-    .contact-list { display: flex; flex-direction: column; gap: 1rem; }
+
+    .contact-info p {
+      color: var(--text-dim);
+      margin-bottom: 1.75rem;
+      font-size: 0.88rem;
+    }
+
+    .contact-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
     .contact-item {
       display: flex;
       align-items: center;
@@ -1258,34 +1680,44 @@
       backdrop-filter: blur(8px);
       transition: all var(--transition);
     }
+
     .contact-item:hover {
       border-color: var(--border-strong);
       transform: translateX(6px);
       background: var(--surface-strong);
     }
+
     .contact-icon {
-      width: 42px; height: 42px;
+      width: 42px;
+      height: 42px;
       border-radius: 10px;
       display: flex;
       align-items: center;
       justify-content: center;
-      background: linear-gradient(135deg, rgba(255,255,255,0.12), rgba(255,255,255,0.02));
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.02));
       color: #ffffff;
       flex-shrink: 0;
       border: 1px solid var(--border);
     }
-    .contact-icon svg { width: 20px; height: 20px; }
+
+    .contact-icon svg {
+      width: 20px;
+      height: 20px;
+    }
+
     .contact-label {
       font-size: 0.65rem;
       color: var(--text-muted);
       text-transform: uppercase;
       letter-spacing: 0.1em;
     }
+
     .contact-value {
       color: var(--text);
       font-weight: 500;
       font-size: 0.85rem;
     }
+
     .contact-form {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -1296,7 +1728,13 @@
       flex-direction: column;
       gap: 1rem;
     }
-    .field { display: flex; flex-direction: column; gap: 0.4rem; }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
     .field label {
       font-size: 0.7rem;
       color: var(--text-dim);
@@ -1304,7 +1742,9 @@
       text-transform: uppercase;
       font-weight: 600;
     }
-    .field input, .field textarea {
+
+    .field input,
+    .field textarea {
       width: 100%;
       padding: 0.75rem 0.9rem;
       background: var(--bg-1);
@@ -1316,13 +1756,19 @@
       transition: all var(--transition);
       resize: vertical;
     }
-    .field textarea { min-height: 130px; }
-    .field input:focus, .field textarea:focus {
-      outline: none;
-      border-color: rgba(255,255,255,0.4);
-      background: var(--bg-2);
-      box-shadow: 0 0 0 3px rgba(255,255,255,0.06);
+
+    .field textarea {
+      min-height: 130px;
     }
+
+    .field input:focus,
+    .field textarea:focus {
+      outline: none;
+      border-color: rgba(255, 255, 255, 0.4);
+      background: var(--bg-2);
+      box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.06);
+    }
+
     .form-submit {
       align-self: flex-start;
       margin-top: 0.5rem;
@@ -1336,7 +1782,10 @@
       color: var(--text-muted);
       font-size: 0.78rem;
     }
-    footer .heart { color: #ffffff; }
+
+    footer .heart {
+      color: #ffffff;
+    }
 
     /* ============ REVEAL ============ */
     .reveal {
@@ -1344,50 +1793,84 @@
       transform: translateY(30px);
       transition: opacity 0.8s ease, transform 0.8s ease;
     }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
     /* ============ RESPONSIVE ============ */
     @media (max-width: 860px) {
-      .about-grid, .contact-grid {
+
+      .about-grid,
+      .contact-grid {
         grid-template-columns: 1fr;
       }
-      .about-portrait { max-width: 280px; margin: 0 auto; }
-      section { padding: 5rem 1.25rem; }
+
+      .about-portrait {
+        max-width: 280px;
+        margin: 0 auto;
+      }
+
+      section {
+        padding: 5rem 1.25rem;
+      }
+
       .showcase-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
         margin-bottom: 3rem;
       }
-      .showcase-body { padding: 1.4rem 1.5rem 1.6rem; }
-      .showcase-title { font-size: 1.15rem; }
-      .showcase-desc { font-size: 0.88rem; }
+
+      .showcase-body {
+        padding: 1.4rem 1.5rem 1.6rem;
+      }
+
+      .showcase-title {
+        font-size: 1.15rem;
+      }
+
+      .showcase-desc {
+        font-size: 0.88rem;
+      }
     }
+
     @media (max-width: 720px) {
       .hamburger {
         display: flex;
-        width: 42px; height: 42px;
+        width: 42px;
+        height: 42px;
         align-items: center;
         justify-content: center;
         border-radius: 50%;
-        border: 1px solid rgba(255,255,255,0.15);
-        background: rgba(255,255,255,0.04);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        background: rgba(255, 255, 255, 0.04);
         backdrop-filter: blur(8px);
         transition: border-color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
       }
+
       .hamburger:hover {
-        border-color: rgba(255,255,255,0.3);
-        background: rgba(255,255,255,0.08);
+        border-color: rgba(255, 255, 255, 0.3);
+        background: rgba(255, 255, 255, 0.08);
       }
+
       .hamburger.open {
-        border-color: rgba(255,255,255,0.35);
-        background: rgba(255,255,255,0.08);
-        box-shadow: 0 0 20px -4px rgba(255,255,255,0.2);
+        border-color: rgba(255, 255, 255, 0.35);
+        background: rgba(255, 255, 255, 0.08);
+        box-shadow: 0 0 20px -4px rgba(255, 255, 255, 0.2);
       }
+
       .hamburger span {
         width: 18px;
       }
-      .hamburger.open span:nth-child(1) { width: 20px; }
-      .hamburger.open span:nth-child(3) { width: 20px; }
+
+      .hamburger.open span:nth-child(1) {
+        width: 20px;
+      }
+
+      .hamburger.open span:nth-child(3) {
+        width: 20px;
+      }
 
       .nav-links {
         position: fixed;
@@ -1409,27 +1892,30 @@
         opacity: 0;
         pointer-events: none;
         visibility: hidden;
-        transition: transform 0.32s cubic-bezier(.22,1,.36,1),
-                    opacity 0.24s ease,
-                    visibility 0s linear 0.32s;
+        transition: transform 0.32s cubic-bezier(.22, 1, .36, 1),
+          opacity 0.24s ease,
+          visibility 0s linear 0.32s;
         align-items: stretch;
         z-index: 999;
         overflow: hidden;
       }
+
       .nav-links.open {
         transform: translateY(0) scale(1);
         opacity: 1;
         pointer-events: auto;
         visibility: visible;
-        transition: transform 0.32s cubic-bezier(.22,1,.36,1),
-                    opacity 0.24s ease,
-                    visibility 0s linear 0s;
+        transition: transform 0.32s cubic-bezier(.22, 1, .36, 1),
+          opacity 0.24s ease,
+          visibility 0s linear 0s;
       }
+
       .nav-links li {
         width: 100%;
         margin: 0;
         list-style: none;
       }
+
       .nav-link {
         position: relative;
         display: flex;
@@ -1446,49 +1932,87 @@
         opacity: 0;
         transform: translateY(6px);
         transition: color 0.2s ease,
-                    background 0.2s ease,
-                    opacity 0.3s ease,
-                    transform 0.3s cubic-bezier(.22,1,.36,1);
+          background 0.2s ease,
+          opacity 0.3s ease,
+          transform 0.3s cubic-bezier(.22, 1, .36, 1);
       }
+
       .nav-link::before,
       .nav-link::after {
         content: none;
         display: none;
       }
+
       .nav-links.open .nav-link {
         opacity: 1;
         transform: translateY(0);
       }
-      .nav-links.open li:nth-child(1) .nav-link { transition-delay: 0.04s; }
-      .nav-links.open li:nth-child(2) .nav-link { transition-delay: 0.08s; }
-      .nav-links.open li:nth-child(3) .nav-link { transition-delay: 0.12s; }
-      .nav-links.open li:nth-child(4) .nav-link { transition-delay: 0.16s; }
-      .nav-links.open li:nth-child(5) .nav-link { transition-delay: 0.20s; }
-      .nav-links.open li:nth-child(6) .nav-link { transition-delay: 0.24s; }
+
+      .nav-links.open li:nth-child(1) .nav-link {
+        transition-delay: 0.04s;
+      }
+
+      .nav-links.open li:nth-child(2) .nav-link {
+        transition-delay: 0.08s;
+      }
+
+      .nav-links.open li:nth-child(3) .nav-link {
+        transition-delay: 0.12s;
+      }
+
+      .nav-links.open li:nth-child(4) .nav-link {
+        transition-delay: 0.16s;
+      }
+
+      .nav-links.open li:nth-child(5) .nav-link {
+        transition-delay: 0.20s;
+      }
+
+      .nav-links.open li:nth-child(6) .nav-link {
+        transition-delay: 0.24s;
+      }
+
       .nav-link.active {
         color: #ffffff;
         background: rgba(255, 255, 255, 0.08);
         padding-left: 16px;
       }
+
       .nav-link:hover {
         color: #ffffff;
         background: rgba(255, 255, 255, 0.06);
         padding-left: 16px;
       }
-      .about-stats { grid-template-columns: 1fr; }
-      .timeline { padding-left: 1.5rem; }
-      .timeline-item::before { left: -1.95rem; }
+
+      .about-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .timeline {
+        padding-left: 1.5rem;
+      }
+
+      .timeline-item::before {
+        left: -1.95rem;
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
+
+      *,
+      *::before,
+      *::after {
         animation-duration: 0.01ms !important;
         transition-duration: 0.01ms !important;
       }
-      html { scroll-behavior: auto; }
+
+      html {
+        scroll-behavior: auto;
+      }
     }
   </style>
 </head>
+
 <body>
 
   <!-- ============ NAVBAR ============ -->
@@ -1522,24 +2046,41 @@
         Soy <span class="typewriter-text" id="typewriter"></span>
       </p>
       <p class="hero-desc">
-        Diseño y desarrollo interfaces web modernas con enfoque en la experiencia del usuario, mezclando código limpio con sensibilidad visual.
+        Diseño y desarrollo interfaces web modernas con enfoque en la experiencia del usuario, mezclando código limpio
+        con sensibilidad visual.
       </p>
       <div class="cta-row">
         <a href="#projects" class="btn btn-primary">
           Ver mi trabajo
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M5 12h14" />
+            <path d="m12 5 7 7-7 7" />
+          </svg>
         </a>
         <a href="#contact" class="btn btn-secondary">
           Contactarme
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect width="20" height="16" x="2" y="4" rx="2" />
+            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+          </svg>
         </a>
       </div>
       <div class="hero-socials" aria-label="Redes sociales">
-        <a href="https://github.com/fabricoronil" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="GitHub">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.71.08-.71 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.95.1-.74.4-1.25.73-1.54-2.55-.29-5.24-1.27-5.24-5.66 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.15 1.17.91-.25 1.89-.38 2.86-.38.97 0 1.95.13 2.86.38 2.18-1.48 3.14-1.17 3.14-1.17.62 1.58.23 2.75.11 3.04.74.8 1.18 1.82 1.18 3.07 0 4.4-2.69 5.36-5.25 5.65.41.36.78 1.05.78 2.12v3.14c0 .31.21.67.8.56C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"/></svg>
+        <a href="https://github.com/fabricoronil" target="_blank" rel="noopener noreferrer" class="social-icon"
+          aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path
+              d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.71.08-.71 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.95.1-.74.4-1.25.73-1.54-2.55-.29-5.24-1.27-5.24-5.66 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.15 1.17.91-.25 1.89-.38 2.86-.38.97 0 1.95.13 2.86.38 2.18-1.48 3.14-1.17 3.14-1.17.62 1.58.23 2.75.11 3.04.74.8 1.18 1.82 1.18 3.07 0 4.4-2.69 5.36-5.25 5.65.41.36.78 1.05.78 2.12v3.14c0 .31.21.67.8.56C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z" />
+          </svg>
         </a>
-        <a href="https://www.linkedin.com/in/fabricio-coronil-43586a2ba/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+        <a href="https://www.linkedin.com/in/fabricio-coronil-43586a2ba/" target="_blank" rel="noopener noreferrer"
+          class="social-icon" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path
+              d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z" />
+          </svg>
         </a>
       </div>
     </div>
@@ -1561,13 +2102,17 @@
           </div>
           <div class="about-text">
             <p>
-              Soy <strong>Fabricio Coronil</strong>, estudiante de Ingeniería en Sistemas con una fuerte pasión por el desarrollo frontend y la tecnología creativa.
+              Soy <strong>Fabricio Coronil</strong>, estudiante de Ingeniería en Sistemas con una fuerte pasión por el
+              desarrollo frontend y la tecnología creativa.
             </p>
             <p>
-              Construyo interfaces web limpias y responsivas usando herramientas modernas como <strong>React</strong>, <strong>TypeScript</strong> y <strong>Tailwind CSS</strong>. También aporto un perfil único gracias a mis habilidades avanzadas en <strong>Adobe Creative Suite</strong>, conectando el diseño con el desarrollo.
+              Construyo interfaces web limpias y responsivas usando herramientas modernas como <strong>React</strong>,
+              <strong>TypeScript</strong> y <strong>Tailwind CSS</strong>. También aporto un perfil único gracias a mis
+              habilidades avanzadas en <strong>Adobe Creative Suite</strong>, conectando el diseño con el desarrollo.
             </p>
             <p>
-              Estoy buscando activamente oportunidades para crecer profesionalmente y contribuir a proyectos reales del mundo del software.
+              Estoy buscando activamente oportunidades para crecer profesionalmente y contribuir a proyectos reales del
+              mundo del software.
             </p>
             <div class="about-stats">
               <div class="stat">
@@ -1600,51 +2145,90 @@
           <div class="stack-group">
             <h3><span>💻</span><span>Desarrollo Frontend</span></h3>
             <div class="badges">
-              <span class="badge"><img class="badge-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="" loading="lazy" />HTML</span>
-              <span class="badge"><img class="badge-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="" loading="lazy" />CSS</span>
-              <span class="badge"><img class="badge-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="" loading="lazy" />JavaScript</span>
-              <span class="badge"><img class="badge-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" alt="" loading="lazy" />TypeScript</span>
-              <span class="badge"><img class="badge-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="" loading="lazy" />React</span>
-              <span class="badge"><img class="badge-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" alt="" loading="lazy" />Tailwind CSS</span>
+              <span class="badge"><img class="badge-icon"
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt=""
+                  loading="lazy" />HTML</span>
+              <span class="badge"><img class="badge-icon"
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt=""
+                  loading="lazy" />CSS</span>
+              <span class="badge"><img class="badge-icon"
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
+                  alt="" loading="lazy" />JavaScript</span>
+              <span class="badge"><img class="badge-icon"
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg"
+                  alt="" loading="lazy" />TypeScript</span>
+              <span class="badge"><img class="badge-icon"
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt=""
+                  loading="lazy" />React</span>
+              <span class="badge"><img class="badge-icon"
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg"
+                  alt="" loading="lazy" />Tailwind CSS</span>
             </div>
           </div>
           <div class="stack-group">
             <h3><span>⚙️</span><span>Desarrollo Backend</span></h3>
             <div class="badges">
-              <span class="badge"><img class="badge-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" alt="" loading="lazy" />Node.js</span>
-              <span class="badge"><img class="badge-icon badge-icon-invert" src="https://api.iconify.design/simple-icons:express.svg" alt="" loading="lazy" />Express</span>
-              <span class="badge"><img class="badge-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" alt="" loading="lazy" />TypeScript</span>
-              <span class="badge"><img class="badge-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" alt="" loading="lazy" />MongoDB</span>
-              <span class="badge"><img class="badge-icon badge-icon-invert" src="https://api.iconify.design/simple-icons:mongoose.svg" alt="" loading="lazy" />Mongoose</span>
-              <span class="badge"><img class="badge-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" alt="" loading="lazy" />MySQL</span>
-              <span class="badge"><img class="badge-icon badge-icon-invert" src="https://api.iconify.design/mdi:database.svg" alt="" loading="lazy" />SQL</span>
-              <span class="badge"><img class="badge-icon badge-icon-invert" src="https://api.iconify.design/mdi:database-outline.svg" alt="" loading="lazy" />NoSQL</span>
-              <span class="badge"><img class="badge-icon" src="https://api.iconify.design/logos:jwt-icon.svg" alt="" loading="lazy" />JWT</span>
-              <span class="badge"><img class="badge-icon badge-icon-invert" src="https://api.iconify.design/mdi:shield-lock.svg" alt="" loading="lazy" />bcryptjs</span>
+              <span class="badge"><img class="badge-icon"
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" alt=""
+                  loading="lazy" />Node.js</span>
+              <span class="badge"><img class="badge-icon badge-icon-invert"
+                  src="https://api.iconify.design/simple-icons:express.svg" alt="" loading="lazy" />Express</span>
+              <span class="badge"><img class="badge-icon"
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg"
+                  alt="" loading="lazy" />TypeScript</span>
+              <span class="badge"><img class="badge-icon"
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" alt=""
+                  loading="lazy" />MongoDB</span>
+              <span class="badge"><img class="badge-icon badge-icon-invert"
+                  src="https://api.iconify.design/simple-icons:mongoose.svg" alt="" loading="lazy" />Mongoose</span>
+              <span class="badge"><img class="badge-icon"
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" alt=""
+                  loading="lazy" />MySQL</span>
+              <span class="badge"><img class="badge-icon badge-icon-invert"
+                  src="https://api.iconify.design/mdi:database.svg" alt="" loading="lazy" />SQL</span>
+              <span class="badge"><img class="badge-icon badge-icon-invert"
+                  src="https://api.iconify.design/mdi:database-outline.svg" alt="" loading="lazy" />NoSQL</span>
+              <span class="badge"><img class="badge-icon" src="https://api.iconify.design/logos:jwt-icon.svg" alt=""
+                  loading="lazy" />JWT</span>
+              <span class="badge"><img class="badge-icon badge-icon-invert"
+                  src="https://api.iconify.design/mdi:shield-lock.svg" alt="" loading="lazy" />bcryptjs</span>
             </div>
           </div>
           <div class="stack-group">
             <h3><span>🎨</span><span>Diseño & Herramientas Creativas</span></h3>
             <div class="badges">
-              <span class="badge"><img class="badge-icon" src="https://api.iconify.design/logos:adobe-illustrator.svg" alt="" loading="lazy" />Adobe Illustrator</span>
-              <span class="badge"><img class="badge-icon" src="https://api.iconify.design/logos:adobe-photoshop.svg" alt="" loading="lazy" />Adobe Photoshop</span>
-              <span class="badge"><img class="badge-icon" src="https://api.iconify.design/logos:adobe-premiere.svg" alt="" loading="lazy" />Adobe Premiere Pro</span>
-              <span class="badge"><img class="badge-icon" src="https://api.iconify.design/logos:adobe-after-effects.svg" alt="" loading="lazy" />After Effects</span>
+              <span class="badge"><img class="badge-icon" src="https://api.iconify.design/logos:adobe-illustrator.svg"
+                  alt="" loading="lazy" />Adobe Illustrator</span>
+              <span class="badge"><img class="badge-icon" src="https://api.iconify.design/logos:adobe-photoshop.svg"
+                  alt="" loading="lazy" />Adobe Photoshop</span>
+              <span class="badge"><img class="badge-icon" src="https://api.iconify.design/logos:adobe-premiere.svg"
+                  alt="" loading="lazy" />Adobe Premiere Pro</span>
+              <span class="badge"><img class="badge-icon" src="https://api.iconify.design/logos:adobe-after-effects.svg"
+                  alt="" loading="lazy" />After Effects</span>
             </div>
           </div>
           <div class="stack-group">
             <h3><span>📊</span><span>Productividad</span></h3>
             <div class="badges">
-              <span class="badge"><img class="badge-icon" src="https://api.iconify.design/vscode-icons:file-type-excel.svg" alt="" loading="lazy" />Excel Avanzado</span>
-              <span class="badge"><img class="badge-icon" src="https://api.iconify.design/vscode-icons:file-type-word.svg" alt="" loading="lazy" />Word Avanzado</span>
+              <span class="badge"><img class="badge-icon"
+                  src="https://api.iconify.design/vscode-icons:file-type-excel.svg" alt="" loading="lazy" />Excel
+                Avanzado</span>
+              <span class="badge"><img class="badge-icon"
+                  src="https://api.iconify.design/vscode-icons:file-type-word.svg" alt="" loading="lazy" />Word
+                Avanzado</span>
             </div>
           </div>
           <div class="stack-group">
             <h3><span>🛠</span><span>Otros</span></h3>
             <div class="badges">
-              <span class="badge"><img class="badge-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="" loading="lazy" />Python</span>
-              <span class="badge"><img class="badge-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-plain.svg" alt="" loading="lazy" />Git</span>
-              <span class="badge"><img class="badge-icon badge-icon-invert" src="https://api.iconify.design/mdi:github.svg" alt="" loading="lazy" />GitHub</span>
+              <span class="badge"><img class="badge-icon"
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt=""
+                  loading="lazy" />Python</span>
+              <span class="badge"><img class="badge-icon"
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-plain.svg" alt=""
+                  loading="lazy" />Git</span>
+              <span class="badge"><img class="badge-icon badge-icon-invert"
+                  src="https://api.iconify.design/mdi:github.svg" alt="" loading="lazy" />GitHub</span>
             </div>
           </div>
         </div>
@@ -1665,120 +2249,187 @@
             <div class="showcase-thumb">
               <span class="showcase-chip">Landing · Cliente</span>
               <span class="showcase-arrow" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path d="M7 17 17 7" />
+                  <path d="M7 7h10v10" />
+                </svg>
               </span>
-              <img src="imagenes/climatic.png" alt="Vista previa del sitio web Climatic — servicio de aire acondicionado y electricidad" loading="lazy" />
+              <img src="imagenes/climatic.png"
+                alt="Vista previa del sitio web Climatic — servicio de aire acondicionado y electricidad"
+                loading="lazy" />
             </div>
             <div class="showcase-body">
               <h3 class="showcase-title">Climatic — Servicios Técnicos</h3>
               <p class="showcase-desc">
-                Sitio web profesional para una empresa de instalación, mantenimiento y reparación de aire acondicionado y electricidad. Diseño moderno, responsivo y enfocado en conversión.
+                Sitio web profesional para una empresa de instalación, mantenimiento y reparación de aire acondicionado
+                y electricidad. Diseño moderno, responsivo y enfocado en conversión.
               </p>
               <div class="showcase-tech">
-                <span><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="" loading="lazy" />HTML5</span><span><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="" loading="lazy" />CSS3</span><span><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="" loading="lazy" />JavaScript</span><span>UI/UX</span>
+                <span><img class="tech-icon"
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt=""
+                    loading="lazy" />HTML5</span><span><img class="tech-icon"
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt=""
+                    loading="lazy" />CSS3</span><span><img class="tech-icon"
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
+                    alt="" loading="lazy" />JavaScript</span><span>UI/UX</span>
               </div>
             </div>
-            <a href="https://github.com/fabricoronil" target="_blank" rel="noopener noreferrer" class="showcase-link" aria-label="Ver Climatic">Ver proyecto</a>
+            <a href="https://climatic-web.vercel.app/" target="_blank" rel="noopener noreferrer" class="showcase-link"
+              aria-label="Ver Climatic">Ver proyecto</a>
           </article>
 
           <article class="showcase-card">
             <div class="showcase-thumb">
               <span class="showcase-chip">Landing</span>
               <span class="showcase-arrow" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path d="M7 17 17 7" />
+                  <path d="M7 7h10v10" />
+                </svg>
               </span>
-              <img src="imagenes/tepoenciamosweb.png" alt="TePotenciamos — agencia digital, vista de hero" loading="lazy" />
+              <img src="imagenes/tepoenciamosweb.png" alt="TePotenciamos — agencia digital, vista de hero"
+                loading="lazy" />
             </div>
             <div class="showcase-body">
               <h3 class="showcase-title">TePotenciamos</h3>
               <p class="showcase-desc">
-                Sitio web para agencia digital que diseña piezas modernas y veloces. Hero con animación tipográfica, navegación clara y enfoque en conversión.
+                Sitio web para agencia digital que diseña piezas modernas y veloces. Hero con animación tipográfica,
+                navegación clara y enfoque en conversión.
               </p>
               <div class="showcase-tech">
-                <span><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="" loading="lazy" />HTML5</span><span><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="" loading="lazy" />CSS3</span><span><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="" loading="lazy" />JavaScript</span><span>Animaciones</span>
+                <span><img class="tech-icon"
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt=""
+                    loading="lazy" />HTML5</span><span><img class="tech-icon"
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt=""
+                    loading="lazy" />CSS3</span><span><img class="tech-icon"
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
+                    alt="" loading="lazy" />JavaScript</span><span>Animaciones</span>
               </div>
             </div>
-            <a href="https://github.com/fabricoronil" target="_blank" rel="noopener noreferrer" class="showcase-link" aria-label="Ver TePotenciamos">Ver proyecto</a>
+            <a href="https://te-potenciamos-web.vercel.app/" target="_blank" rel="noopener noreferrer" class="showcase-link"
+              aria-label="Ver TePotenciamos">Ver proyecto</a>
           </article>
 
           <article class="showcase-card">
             <div class="showcase-thumb">
               <span class="showcase-chip">Dashboard</span>
               <span class="showcase-arrow" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path d="M7 17 17 7" />
+                  <path d="M7 7h10v10" />
+                </svg>
               </span>
-              <img src="imagenes/tunegociopotenciado.png" alt="Tu Negocio Potenciado — sistema de gestión integral con métricas" loading="lazy" />
+              <img src="imagenes/tunegociopotenciado.png"
+                alt="Tu Negocio Potenciado — sistema de gestión integral con métricas" loading="lazy" />
             </div>
             <div class="showcase-body">
               <h3 class="showcase-title">Tu Negocio Potenciado</h3>
               <p class="showcase-desc">
-                Plataforma de gestión integral para PyMEs: clientes, finanzas, inventario, cobranzas y métricas en vivo, con cobro vía QR y enlaces de pago automatizados.
+                Plataforma de gestión integral para PyMEs: clientes, finanzas, inventario, cobranzas y métricas en vivo,
+                con cobro vía QR y enlaces de pago automatizados.
               </p>
               <div class="showcase-tech">
                 <span>Dashboard</span><span>UI/UX</span><span>Data Viz</span><span>SaaS</span>
               </div>
             </div>
-            <a href="https://github.com/fabricoronil" target="_blank" rel="noopener noreferrer" class="showcase-link" aria-label="Ver Tu Negocio Potenciado">Ver proyecto</a>
+            <a href="https://tepotenciamos.vercel.app/" target="_blank" rel="noopener noreferrer" class="showcase-link"
+              aria-label="Ver Tu Negocio Potenciado">Ver proyecto</a>
           </article>
 
           <article class="showcase-card">
             <div class="showcase-thumb">
               <span class="showcase-chip">Web App</span>
               <span class="showcase-arrow" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path d="M7 17 17 7" />
+                  <path d="M7 7h10v10" />
+                </svg>
               </span>
-              <img src="imagenes/webdeveterianaria.png" alt="Patitas Felices — sistema de gestión veterinaria, pantalla de inicio de sesión" loading="lazy" />
+              <img src="imagenes/webdeveterianaria.png"
+                alt="Patitas Felices — sistema de gestión veterinaria, pantalla de inicio de sesión" loading="lazy" />
             </div>
             <div class="showcase-body">
               <h3 class="showcase-title">Patitas Felices</h3>
               <p class="showcase-desc">
-                Sistema de gestión veterinaria con autenticación, registro de pacientes y panel administrativo. Interfaz limpia y accesible para uso diario en clínicas.
+                Sistema de gestión veterinaria con autenticación, registro de pacientes y panel administrativo. Interfaz
+                limpia y accesible para uso diario en clínicas.
               </p>
               <div class="showcase-tech">
-                <span><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="" loading="lazy" />HTML5</span><span><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="" loading="lazy" />CSS3</span><span><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="" loading="lazy" />JavaScript</span><span>Auth</span>
+                <span><img class="tech-icon"
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt=""
+                    loading="lazy" />HTML5</span><span><img class="tech-icon"
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt=""
+                    loading="lazy" />CSS3</span><span><img class="tech-icon"
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
+                    alt="" loading="lazy" />JavaScript</span><span>Auth</span>
               </div>
             </div>
-            <a href="https://github.com/fabricoronil" target="_blank" rel="noopener noreferrer" class="showcase-link" aria-label="Ver Patitas Felices">Ver proyecto</a>
+            <a href="https://tp-final-fabricio-coronil.vercel.app/" target="_blank" rel="noopener noreferrer" class="showcase-link"
+              aria-label="Ver Patitas Felices">Ver proyecto</a>
           </article>
 
           <article class="showcase-card">
             <div class="showcase-thumb">
               <span class="showcase-chip">E-commerce</span>
               <span class="showcase-arrow" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path d="M7 17 17 7" />
+                  <path d="M7 7h10v10" />
+                </svg>
               </span>
-              <img src="imagenes/tiendaonlinepokestore.png" alt="PokeStore — tienda online de Pokémon, vista de bienvenida" loading="lazy" />
+              <img src="imagenes/tiendaonlinepokestore.png"
+                alt="PokeStore — tienda online de Pokémon, vista de bienvenida" loading="lazy" />
             </div>
             <div class="showcase-body">
               <h3 class="showcase-title">PokeStore</h3>
               <p class="showcase-desc">
-                Tienda online de Pokémon desarrollada como proyecto final del curso de Frontend Developer en la UTN. Permite explorar, marcar favoritos y simular compras en un entorno interactivo.
+                Tienda online de Pokémon desarrollada como proyecto final del curso de Frontend Developer en la UTN.
+                Permite explorar, marcar favoritos y simular compras en un entorno interactivo.
               </p>
               <div class="showcase-tech">
-                <span><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="" loading="lazy" />HTML5</span><span><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="" loading="lazy" />CSS3</span><span><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="" loading="lazy" />JavaScript</span><span>UTN</span>
+                <span><img class="tech-icon"
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt=""
+                    loading="lazy" />HTML5</span><span><img class="tech-icon"
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt=""
+                    loading="lazy" />CSS3</span><span><img class="tech-icon"
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
+                    alt="" loading="lazy" />JavaScript</span><span>UTN</span>
               </div>
             </div>
-            <a href="https://github.com/fabricoronil" target="_blank" rel="noopener noreferrer" class="showcase-link" aria-label="Ver PokeStore">Ver proyecto</a>
+            <a href="https://fabricoronil.github.io/tp-final-FrontEnd-Fabricio-Coronil/" target="_blank" rel="noopener noreferrer" class="showcase-link"
+              aria-label="Ver PokeStore">Ver proyecto</a>
           </article>
 
           <article class="showcase-card">
             <div class="showcase-thumb">
               <span class="showcase-chip">Web3</span>
               <span class="showcase-arrow" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path d="M7 17 17 7" />
+                  <path d="M7 7h10v10" />
+                </svg>
               </span>
-              <img src="imagenes/oxychain.png" alt="OxyChain — marketplace de créditos de carbono Web3" loading="lazy" />
+              <img src="imagenes/oxychain.png" alt="OxyChain — marketplace de créditos de carbono Web3"
+                loading="lazy" />
             </div>
             <div class="showcase-body">
               <h3 class="showcase-title">OxyChain</h3>
               <p class="showcase-desc">
-                Plataforma Web3 de créditos de carbono que permite compensar la huella ambiental con total transparencia. Integra wallet, marketplace y ranking en tiempo real.
+                Plataforma Web3 de créditos de carbono que permite compensar la huella ambiental con total
+                transparencia. Integra wallet, marketplace y ranking en tiempo real.
               </p>
               <div class="showcase-tech">
                 <span>Web3</span><span>Blockchain</span><span>UI/UX</span><span>Marketplace</span>
               </div>
             </div>
-            <a href="https://github.com/fabricoronil" target="_blank" rel="noopener noreferrer" class="showcase-link" aria-label="Ver OxyChain">Ver proyecto</a>
+            <a href="https://oxychain.vercel.app/" target="_blank" rel="noopener noreferrer" class="showcase-link"
+              aria-label="Ver OxyChain">Ver proyecto</a>
           </article>
         </div>
 
@@ -1797,7 +2448,8 @@
           <div class="timeline-item">
             <div class="timeline-meta">Actualmente cursando</div>
             <h3>Ingeniería en Sistemas</h3>
-            <p><strong>Universidad de la Cuenca del Plata</strong> — Carrera en curso enfocada en fundamentos de la computación, ingeniería de software y desarrollo aplicado.</p>
+            <p><strong>Universidad de la Cuenca del Plata</strong> — Carrera en curso enfocada en fundamentos de la
+              computación, ingeniería de software y desarrollo aplicado.</p>
             <div class="courses">
               <span class="course-chip">Estructura de Datos</span>
               <span class="course-chip">Algoritmos</span>
@@ -1810,7 +2462,8 @@
           <div class="timeline-item">
             <div class="timeline-meta">Curso completado</div>
             <h3>Desarrollo Web Full Stack</h3>
-            <p><strong>Universidad Tecnológica Nacional (UTN)</strong> — Curso intensivo de desarrollo web cubriendo frontend y backend, con foco en construir aplicaciones web completas de extremo a extremo.</p>
+            <p><strong>Universidad Tecnológica Nacional (UTN)</strong> — Curso intensivo de desarrollo web cubriendo
+              frontend y backend, con foco en construir aplicaciones web completas de extremo a extremo.</p>
             <div class="courses">
               <span class="course-chip">HTML & CSS</span>
               <span class="course-chip">JavaScript</span>
@@ -1834,120 +2487,216 @@
         </div>
         <div class="cert-grid" id="certGrid">
 
-          <button type="button" class="cert-card" data-cert-src="imagenesdecertificaciones/Captura%20de%20pantalla%202026-04-29%20091250.png" data-cert-caption="Diplomatura en Programación Web Full Stack — UTN (2026)">
+          <button type="button" class="cert-card"
+            data-cert-src="imagenesdecertificaciones/Captura%20de%20pantalla%202026-04-29%20091250.png"
+            data-cert-caption="Diplomatura en Programación Web Full Stack — UTN (2026)">
             <div class="cert-thumb">
               <span class="cert-grade">Aprobado</span>
               <span class="cert-zoom" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <circle cx="11" cy="11" r="8" />
+                  <path d="m21 21-4.3-4.3" />
+                  <path d="M11 8v6" />
+                  <path d="M8 11h6" />
+                </svg>
               </span>
-              <img src="imagenesdecertificaciones/Captura%20de%20pantalla%202026-04-29%20091250.png" alt="Certificado de la Diplomatura en Programación Web Full Stack — UTN" loading="lazy" />
+              <img src="imagenesdecertificaciones/Captura%20de%20pantalla%202026-04-29%20091250.png"
+                alt="Certificado de la Diplomatura en Programación Web Full Stack — UTN" loading="lazy" />
             </div>
             <div class="cert-body">
               <span class="cert-issuer">UTN · Centro de e-Learning</span>
               <h3 class="cert-name">Diplomatura en Programación Web Full Stack</h3>
               <div class="cert-meta">
                 <span>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M12 6v6l4 2" />
+                  </svg>
                   186 hs
                 </span>
                 <span>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/></svg>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <rect width="18" height="18" x="3" y="4" rx="2" />
+                    <path d="M16 2v4" />
+                    <path d="M8 2v4" />
+                    <path d="M3 10h18" />
+                  </svg>
                   Feb 2026
                 </span>
               </div>
             </div>
           </button>
 
-          <button type="button" class="cert-card" data-cert-src="imagenesdecertificaciones/Captura%20de%20pantalla%202026-04-29%20091238.png" data-cert-caption="Curso de Backend Developer — UTN (2026)">
+          <button type="button" class="cert-card"
+            data-cert-src="imagenesdecertificaciones/Captura%20de%20pantalla%202026-04-29%20091238.png"
+            data-cert-caption="Curso de Backend Developer — UTN (2026)">
             <div class="cert-thumb">
               <span class="cert-grade">Excelente</span>
               <span class="cert-zoom" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <circle cx="11" cy="11" r="8" />
+                  <path d="m21 21-4.3-4.3" />
+                  <path d="M11 8v6" />
+                  <path d="M8 11h6" />
+                </svg>
               </span>
-              <img src="imagenesdecertificaciones/Captura%20de%20pantalla%202026-04-29%20091238.png" alt="Certificado del curso de Backend Developer — UTN" loading="lazy" />
+              <img src="imagenesdecertificaciones/Captura%20de%20pantalla%202026-04-29%20091238.png"
+                alt="Certificado del curso de Backend Developer — UTN" loading="lazy" />
             </div>
             <div class="cert-body">
               <span class="cert-issuer">UTN · Centro de e-Learning</span>
               <h3 class="cert-name">Backend Developer — Turno Noche</h3>
               <div class="cert-meta">
                 <span>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M12 6v6l4 2" />
+                  </svg>
                   93 hs
                 </span>
                 <span>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/></svg>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <rect width="18" height="18" x="3" y="4" rx="2" />
+                    <path d="M16 2v4" />
+                    <path d="M8 2v4" />
+                    <path d="M3 10h18" />
+                  </svg>
                   Feb 2026
                 </span>
               </div>
             </div>
           </button>
 
-          <button type="button" class="cert-card" data-cert-src="imagenesdecertificaciones/Captura%20de%20pantalla%202026-04-29%20091206.png" data-cert-caption="Programador Web Inicial - Front End Developer — UTN (2025)">
+          <button type="button" class="cert-card"
+            data-cert-src="imagenesdecertificaciones/Captura%20de%20pantalla%202026-04-29%20091206.png"
+            data-cert-caption="Programador Web Inicial - Front End Developer — UTN (2025)">
             <div class="cert-thumb">
               <span class="cert-grade">Sobresaliente</span>
               <span class="cert-zoom" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <circle cx="11" cy="11" r="8" />
+                  <path d="m21 21-4.3-4.3" />
+                  <path d="M11 8v6" />
+                  <path d="M8 11h6" />
+                </svg>
               </span>
-              <img src="imagenesdecertificaciones/Captura%20de%20pantalla%202026-04-29%20091206.png" alt="Certificado de Programador Web Inicial - Front End Developer — UTN" loading="lazy" />
+              <img src="imagenesdecertificaciones/Captura%20de%20pantalla%202026-04-29%20091206.png"
+                alt="Certificado de Programador Web Inicial - Front End Developer — UTN" loading="lazy" />
             </div>
             <div class="cert-body">
               <span class="cert-issuer">UTN · Centro de e-Learning</span>
               <h3 class="cert-name">Programador Web Inicial — Front End Developer</h3>
               <div class="cert-meta">
                 <span>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M12 6v6l4 2" />
+                  </svg>
                   93 hs
                 </span>
                 <span>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/></svg>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <rect width="18" height="18" x="3" y="4" rx="2" />
+                    <path d="M16 2v4" />
+                    <path d="M8 2v4" />
+                    <path d="M3 10h18" />
+                  </svg>
                   Oct 2025
                 </span>
               </div>
             </div>
           </button>
 
-          <button type="button" class="cert-card" data-cert-src="imagenesdecertificaciones/Captura%20de%20pantalla%202026-04-29%20091228.png" data-cert-caption="Desarrollo web en HTML5, CSS3 y JavaScript (nivel avanzado) — UTN (2025)">
+          <button type="button" class="cert-card"
+            data-cert-src="imagenesdecertificaciones/Captura%20de%20pantalla%202026-04-29%20091228.png"
+            data-cert-caption="Desarrollo web en HTML5, CSS3 y JavaScript (nivel avanzado) — UTN (2025)">
             <div class="cert-thumb">
               <span class="cert-grade">Aprobado</span>
               <span class="cert-zoom" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <circle cx="11" cy="11" r="8" />
+                  <path d="m21 21-4.3-4.3" />
+                  <path d="M11 8v6" />
+                  <path d="M8 11h6" />
+                </svg>
               </span>
-              <img src="imagenesdecertificaciones/Captura%20de%20pantalla%202026-04-29%20091228.png" alt="Certificado de Desarrollo web en HTML5, CSS3 y JavaScript nivel avanzado — UTN" loading="lazy" />
+              <img src="imagenesdecertificaciones/Captura%20de%20pantalla%202026-04-29%20091228.png"
+                alt="Certificado de Desarrollo web en HTML5, CSS3 y JavaScript nivel avanzado — UTN" loading="lazy" />
             </div>
             <div class="cert-body">
               <span class="cert-issuer">UTN · Centro de e-Learning</span>
               <h3 class="cert-name">Desarrollo Web — HTML5, CSS3 y JavaScript (Avanzado)</h3>
               <div class="cert-meta">
                 <span>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M12 6v6l4 2" />
+                  </svg>
                   67 hs
                 </span>
                 <span>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/></svg>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <rect width="18" height="18" x="3" y="4" rx="2" />
+                    <path d="M16 2v4" />
+                    <path d="M8 2v4" />
+                    <path d="M3 10h18" />
+                  </svg>
                   Nov 2025
                 </span>
               </div>
             </div>
           </button>
 
-          <button type="button" class="cert-card" data-cert-src="imagenesdecertificaciones/Captura%20de%20pantalla%202026-04-29%20091300.png" data-cert-caption="Programa Ejecutivo de Habilidades Sociales para Startups y Emprendedores — Silicon Misiones / Municipalidad de Posadas (2025)">
+          <button type="button" class="cert-card"
+            data-cert-src="imagenesdecertificaciones/Captura%20de%20pantalla%202026-04-29%20091300.png"
+            data-cert-caption="Programa Ejecutivo de Habilidades Sociales para Startups y Emprendedores — Silicon Misiones / Municipalidad de Posadas (2025)">
             <div class="cert-thumb">
               <span class="cert-grade">Participación</span>
               <span class="cert-zoom" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <circle cx="11" cy="11" r="8" />
+                  <path d="m21 21-4.3-4.3" />
+                  <path d="M11 8v6" />
+                  <path d="M8 11h6" />
+                </svg>
               </span>
-              <img src="imagenesdecertificaciones/Captura%20de%20pantalla%202026-04-29%20091300.png" alt="Certificado del Programa Ejecutivo de Habilidades Sociales para Startups y Emprendedores — Silicon Misiones" loading="lazy" />
+              <img src="imagenesdecertificaciones/Captura%20de%20pantalla%202026-04-29%20091300.png"
+                alt="Certificado del Programa Ejecutivo de Habilidades Sociales para Startups y Emprendedores — Silicon Misiones"
+                loading="lazy" />
             </div>
             <div class="cert-body">
               <span class="cert-issuer">Silicon Misiones · Posadas</span>
               <h3 class="cert-name">Habilidades Sociales para Startups y Emprendedores</h3>
               <div class="cert-meta">
                 <span>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M12 6v6l4 2" />
+                  </svg>
                   4 encuentros
                 </span>
                 <span>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/></svg>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <rect width="18" height="18" x="3" y="4" rx="2" />
+                    <path d="M16 2v4" />
+                    <path d="M8 2v4" />
+                    <path d="M3 10h18" />
+                  </svg>
                   Sep 2025
                 </span>
               </div>
@@ -1959,16 +2708,27 @@
     </section>
 
     <!-- ============ LIGHTBOX ============ -->
-    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visor de certificados" aria-hidden="true">
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visor de certificados"
+      aria-hidden="true">
       <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Cerrar">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 6 6 18" />
+          <path d="m6 6 12 12" />
+        </svg>
       </button>
       <button type="button" class="lightbox-nav prev" id="lightboxPrev" aria-label="Anterior">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path d="m15 18-6-6 6-6" />
+        </svg>
       </button>
       <img class="lightbox-image" id="lightboxImage" alt="" />
       <button type="button" class="lightbox-nav next" id="lightboxNext" aria-label="Siguiente">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path d="m9 18 6-6-6-6" />
+        </svg>
       </button>
       <div class="lightbox-caption" id="lightboxCaption"></div>
     </div>
@@ -1979,33 +2739,47 @@
         <div class="section-head">
           <span class="section-tag">Contacto</span>
           <h2 class="section-title" id="contact-title">Hablemos</h2>
-          <p class="section-subtitle">¿Tienes una idea, una propuesta o simplemente quieres saludar? Mi bandeja está abierta.</p>
+          <p class="section-subtitle">¿Tienes una idea, una propuesta o simplemente quieres saludar? Mi bandeja está
+            abierta.</p>
         </div>
         <div class="contact-grid">
           <div class="contact-info">
-            <p>Estoy abierto a oportunidades, colaboraciones y proyectos donde pueda aportar y seguir aprendiendo. La forma más rápida de llegar a mí es por email o redes profesionales.</p>
+            <p>Estoy abierto a oportunidades, colaboraciones y proyectos donde pueda aportar y seguir aprendiendo. La
+              forma más rápida de llegar a mí es por email o redes profesionales.</p>
             <div class="contact-list">
               <a href="mailto:coronilfabri@gmail.com" class="contact-item" aria-label="Enviar email">
                 <span class="contact-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <rect width="20" height="16" x="2" y="4" rx="2" />
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                  </svg>
                 </span>
                 <div>
                   <div class="contact-label">Email</div>
                   <div class="contact-value">coronilfabri@gmail.com</div>
                 </div>
               </a>
-              <a href="https://github.com/fabricoronil" target="_blank" rel="noopener noreferrer" class="contact-item" aria-label="Ir al perfil de GitHub">
+              <a href="https://github.com/fabricoronil" target="_blank" rel="noopener noreferrer" class="contact-item"
+                aria-label="Ir al perfil de GitHub">
                 <span class="contact-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.71.08-.71 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.95.1-.74.4-1.25.73-1.54-2.55-.29-5.24-1.27-5.24-5.66 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.15 1.17.91-.25 1.89-.38 2.86-.38.97 0 1.95.13 2.86.38 2.18-1.48 3.14-1.17 3.14-1.17.62 1.58.23 2.75.11 3.04.74.8 1.18 1.82 1.18 3.07 0 4.4-2.69 5.36-5.25 5.65.41.36.78 1.05.78 2.12v3.14c0 .31.21.67.8.56C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"/></svg>
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.71.08-.71 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.95.1-.74.4-1.25.73-1.54-2.55-.29-5.24-1.27-5.24-5.66 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.15 1.17.91-.25 1.89-.38 2.86-.38.97 0 1.95.13 2.86.38 2.18-1.48 3.14-1.17 3.14-1.17.62 1.58.23 2.75.11 3.04.74.8 1.18 1.82 1.18 3.07 0 4.4-2.69 5.36-5.25 5.65.41.36.78 1.05.78 2.12v3.14c0 .31.21.67.8.56C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z" />
+                  </svg>
                 </span>
                 <div>
                   <div class="contact-label">GitHub</div>
                   <div class="contact-value">@fabricoronil</div>
                 </div>
               </a>
-              <a href="https://www.linkedin.com/in/fabricio-coronil-43586a2ba/" target="_blank" rel="noopener noreferrer" class="contact-item" aria-label="Ir al perfil de LinkedIn">
+              <a href="https://www.linkedin.com/in/fabricio-coronil-43586a2ba/" target="_blank"
+                rel="noopener noreferrer" class="contact-item" aria-label="Ir al perfil de LinkedIn">
                 <span class="contact-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z" />
+                  </svg>
                 </span>
                 <div>
                   <div class="contact-label">LinkedIn</div>
@@ -2030,7 +2804,11 @@
             </div>
             <button type="submit" class="btn btn-primary form-submit">
               Enviar mensaje
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="m22 2-7 20-4-9-9-4Z" />
+                <path d="M22 2 11 13" />
+              </svg>
             </button>
           </form>
         </div>
@@ -2040,7 +2818,7 @@
 
   <footer>
     <div class="container">
-      © <span id="year"></span> Fabricio Coronil — Diseñado y desarrollado con <span class="heart">♥</span> en Argentina.
+      © <span id="year"></span> Desarrollado por Fabricio Coronil
     </div>
   </footer>
 
@@ -2049,8 +2827,8 @@
     (() => {
       const phrases = [
         'Estudiante de Ingeniería en Sistemas',
-        'Frontend Developer',
-        'Pensador Creativo',
+        'Desarrollador Web Full Stack',
+        'En Constante Crecimiento',
         'Solucionador de Problemas'
       ];
       const el = document.getElementById('typewriter');
@@ -2201,6 +2979,18 @@
       document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     })();
 
+    /* ============ SHOWCASE CARDS CLICK ============ */
+    (() => {
+      document.querySelectorAll('.showcase-card').forEach(card => {
+        const link = card.querySelector('.showcase-link');
+        if (!link) return;
+        card.addEventListener('click', (e) => {
+          if (e.target.closest('a')) return;
+          window.open(link.href, '_blank', 'noopener,noreferrer');
+        });
+      });
+    })();
+
     /* ============ CERT LIGHTBOX ============ */
     (() => {
       const cards = document.querySelectorAll('.cert-card');
@@ -2282,4 +3072,5 @@
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
+
 </html>
