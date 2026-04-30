@@ -123,16 +123,32 @@
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 100;
-      padding: 1rem 1.5rem;
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      background: rgba(5, 5, 5, 0.55);
+      padding: 0.85rem 1.5rem;
+      backdrop-filter: blur(20px) saturate(1.4);
+      -webkit-backdrop-filter: blur(20px) saturate(1.4);
+      background: rgba(5, 5, 5, 0.45);
       border-bottom: 1px solid transparent;
-      transition: all var(--transition);
+      transition: background 0.5s cubic-bezier(.4,0,.2,1),
+                  padding 0.5s cubic-bezier(.4,0,.2,1),
+                  border-color 0.5s cubic-bezier(.4,0,.2,1),
+                  box-shadow 0.5s cubic-bezier(.4,0,.2,1);
+    }
+    .navbar::after {
+      content: '';
+      position: absolute;
+      bottom: -1px; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.0), transparent);
+      transition: background 0.6s ease;
     }
     .navbar.scrolled {
-      background: rgba(5, 5, 5, 0.85);
-      border-bottom-color: var(--border);
+      background: rgba(5, 5, 5, 0.82);
+      padding: 0.65rem 1.5rem;
+      border-bottom-color: rgba(255,255,255,0.06);
+      box-shadow: 0 4px 30px -4px rgba(0,0,0,0.5), 0 1px 0 0 rgba(255,255,255,0.03) inset;
+    }
+    .navbar.scrolled::after {
+      background: linear-gradient(90deg, transparent 5%, rgba(255,255,255,0.12) 30%, rgba(255,255,255,0.18) 50%, rgba(255,255,255,0.12) 70%, transparent 95%);
     }
     .nav-inner {
       max-width: var(--max);
@@ -148,49 +164,98 @@
       letter-spacing: -0.02em;
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.55rem;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      position: relative;
     }
+    .logo:hover { opacity: 0.85; transform: translateY(-1px); }
     .logo-dot {
       width: 10px; height: 10px;
       border-radius: 50%;
       background: radial-gradient(circle at 30% 30%, #ffffff, #888888);
-      box-shadow: 0 0 16px var(--accent-glow);
-      animation: pulse 2.4s infinite;
+      box-shadow: 0 0 16px var(--accent-glow), 0 0 6px rgba(255,255,255,0.3);
+      animation: logoPulse 2.8s ease-in-out infinite;
     }
-    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(1.25)} }
-    .nav-links { display: flex; gap: 2rem; align-items: center; }
+    @keyframes logoPulse {
+      0%, 100% { opacity: 1; transform: scale(1); box-shadow: 0 0 16px var(--accent-glow), 0 0 6px rgba(255,255,255,0.3); }
+      50% { opacity: 0.55; transform: scale(1.3); box-shadow: 0 0 24px var(--accent-glow), 0 0 12px rgba(255,255,255,0.5); }
+    }
+    .nav-links {
+      display: flex;
+      gap: 0.35rem;
+      align-items: center;
+    }
     .nav-link {
       color: var(--text-dim);
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       font-weight: 500;
       position: relative;
-      padding: 0.5rem 0;
+      padding: 0.45rem 0.75rem;
+      border-radius: 8px;
+      transition: color 0.3s ease, background 0.3s ease;
+      letter-spacing: 0.01em;
+    }
+    .nav-link::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.0);
+      transition: background 0.3s ease;
+      pointer-events: none;
     }
     .nav-link::after {
       content: '';
       position: absolute;
-      bottom: 0; left: 0;
-      width: 0; height: 1px;
+      bottom: 2px; left: 50%;
+      width: 0; height: 2px;
+      border-radius: 2px;
       background: linear-gradient(90deg, transparent, #ffffff, transparent);
-      transition: width var(--transition);
+      transform: translateX(-50%);
+      transition: width 0.35s cubic-bezier(.4,0,.2,1), box-shadow 0.35s ease;
     }
-    .nav-link:hover, .nav-link.active { color: var(--text); }
-    .nav-link.active::after, .nav-link:hover::after { width: 100%; }
+    .nav-link:hover {
+      color: var(--text);
+    }
+    .nav-link:hover::before {
+      background: rgba(255,255,255,0.05);
+    }
+    .nav-link:hover::after {
+      width: 60%;
+    }
+    .nav-link.active {
+      color: #ffffff;
+    }
+    .nav-link.active::before {
+      background: rgba(255,255,255,0.07);
+    }
+    .nav-link.active::after {
+      width: 70%;
+      box-shadow: 0 2px 10px -2px rgba(255,255,255,0.4);
+    }
     .hamburger {
       display: none;
       flex-direction: column;
       gap: 5px;
       padding: 0.5rem;
+      border-radius: 8px;
+      transition: background 0.3s ease;
+      position: relative;
+      z-index: 1000;
+    }
+    .hamburger:hover {
+      background: rgba(255,255,255,0.06);
     }
     .hamburger span {
-      width: 24px; height: 2px;
+      width: 22px; height: 2px;
       background: var(--text);
-      border-radius: 2px;
-      transition: all var(--transition);
+      border-radius: 3px;
+      transition: transform 0.4s cubic-bezier(.4,0,.2,1), opacity 0.3s ease, width 0.3s ease;
+      transform-origin: center;
     }
-    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    .hamburger.open span:nth-child(2) { opacity: 0; }
-    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); width: 24px; }
+    .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); width: 24px; }
 
     /* ============ HERO ============ */
     .hero {
@@ -1288,37 +1353,128 @@
       }
       .about-portrait { max-width: 280px; margin: 0 auto; }
       section { padding: 5rem 1.25rem; }
-      .featured-project {
+      .showcase-grid {
         grid-template-columns: 1fr;
-        gap: 1.75rem;
-        padding: 1.25rem;
+        gap: 1.5rem;
         margin-bottom: 3rem;
       }
-      .featured-image-wrap {
-        transform: none;
-        aspect-ratio: 16 / 11;
-      }
-      .featured-project:hover .featured-image-wrap { transform: scale(1.01); }
-      .showcase-grid { margin-bottom: 3rem; }
+      .showcase-body { padding: 1.4rem 1.5rem 1.6rem; }
+      .showcase-title { font-size: 1.15rem; }
+      .showcase-desc { font-size: 0.88rem; }
     }
     @media (max-width: 720px) {
+      .hamburger {
+        display: flex;
+        width: 42px; height: 42px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        border: 1px solid rgba(255,255,255,0.15);
+        background: rgba(255,255,255,0.04);
+        backdrop-filter: blur(8px);
+        transition: border-color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+      }
+      .hamburger:hover {
+        border-color: rgba(255,255,255,0.3);
+        background: rgba(255,255,255,0.08);
+      }
+      .hamburger.open {
+        border-color: rgba(255,255,255,0.35);
+        background: rgba(255,255,255,0.08);
+        box-shadow: 0 0 20px -4px rgba(255,255,255,0.2);
+      }
+      .hamburger span {
+        width: 18px;
+      }
+      .hamburger.open span:nth-child(1) { width: 20px; }
+      .hamburger.open span:nth-child(3) { width: 20px; }
+
       .nav-links {
         position: fixed;
-        top: 64px; left: 0; right: 0;
+        top: 64px;
+        left: 12px;
+        right: 12px;
+        bottom: auto;
         flex-direction: column;
-        gap: 0;
-        background: rgba(5, 5, 5, 0.97);
-        backdrop-filter: blur(14px);
-        padding: 1rem 1.5rem 2rem;
-        border-bottom: 1px solid var(--border);
-        transform: translateY(-150%);
-        transition: transform var(--transition);
-        align-items: flex-start;
+        gap: 4px;
+        background: rgba(10, 10, 10, 0.85);
+        backdrop-filter: blur(24px) saturate(140%);
+        -webkit-backdrop-filter: blur(24px) saturate(140%);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 18px;
+        padding: 10px;
+        box-shadow: 0 24px 60px -20px rgba(0, 0, 0, 0.7);
+        transform: translateY(-12px) scale(0.98);
+        transform-origin: top right;
+        opacity: 0;
+        pointer-events: none;
+        visibility: hidden;
+        transition: transform 0.32s cubic-bezier(.22,1,.36,1),
+                    opacity 0.24s ease,
+                    visibility 0s linear 0.32s;
+        align-items: stretch;
+        z-index: 999;
+        overflow: hidden;
       }
-      .nav-links.open { transform: translateY(0); }
-      .nav-link { padding: 1rem 0; width: 100%; border-bottom: 1px solid var(--border); }
-      .nav-link:last-child { border-bottom: none; }
-      .hamburger { display: flex; }
+      .nav-links.open {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+        pointer-events: auto;
+        visibility: visible;
+        transition: transform 0.32s cubic-bezier(.22,1,.36,1),
+                    opacity 0.24s ease,
+                    visibility 0s linear 0s;
+      }
+      .nav-links li {
+        width: 100%;
+        margin: 0;
+        list-style: none;
+      }
+      .nav-link {
+        position: relative;
+        display: flex;
+        align-items: center;
+        padding: 14px 16px;
+        width: 100%;
+        border-bottom: none;
+        font-size: 0.95rem;
+        font-weight: 500;
+        letter-spacing: -0.005em;
+        color: rgba(255, 255, 255, 0.72);
+        background: transparent;
+        border-radius: 10px;
+        opacity: 0;
+        transform: translateY(6px);
+        transition: color 0.2s ease,
+                    background 0.2s ease,
+                    opacity 0.3s ease,
+                    transform 0.3s cubic-bezier(.22,1,.36,1);
+      }
+      .nav-link::before,
+      .nav-link::after {
+        content: none;
+        display: none;
+      }
+      .nav-links.open .nav-link {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .nav-links.open li:nth-child(1) .nav-link { transition-delay: 0.04s; }
+      .nav-links.open li:nth-child(2) .nav-link { transition-delay: 0.08s; }
+      .nav-links.open li:nth-child(3) .nav-link { transition-delay: 0.12s; }
+      .nav-links.open li:nth-child(4) .nav-link { transition-delay: 0.16s; }
+      .nav-links.open li:nth-child(5) .nav-link { transition-delay: 0.20s; }
+      .nav-links.open li:nth-child(6) .nav-link { transition-delay: 0.24s; }
+      .nav-link.active {
+        color: #ffffff;
+        background: rgba(255, 255, 255, 0.08);
+        padding-left: 16px;
+      }
+      .nav-link:hover {
+        color: #ffffff;
+        background: rgba(255, 255, 255, 0.06);
+        padding-left: 16px;
+      }
       .about-stats { grid-template-columns: 1fr; }
       .timeline { padding-left: 1.5rem; }
       .timeline-item::before { left: -1.95rem; }
@@ -1504,38 +1660,27 @@
           <p class="section-subtitle">Una selección de mis proyectos más representativos en desarrollo y diseño.</p>
         </div>
 
-        <article class="featured-project" aria-labelledby="featured-climatic-title">
-          <div class="featured-image-wrap">
-            <span class="featured-badge">Destacado</span>
-            <img src="imagenes/climatic.png" alt="Vista previa del sitio web Climatic — servicio de aire acondicionado y electricidad" loading="lazy" />
-          </div>
-          <div class="featured-content">
-            <span class="featured-tag">Landing Page · Cliente</span>
-            <h3 class="featured-title" id="featured-climatic-title">Climatic — Servicios Técnicos</h3>
-            <p class="featured-desc">
-              Sitio web profesional para una empresa de instalación, mantenimiento y reparación de sistemas de aire acondicionado y electricidad. Diseño moderno, responsivo y enfocado en conversión, con jerarquía visual clara para destacar los servicios y la solicitud de presupuestos.
-            </p>
-            <div class="featured-tech" aria-label="Tecnologías utilizadas">
-              <span><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="" loading="lazy" />HTML5</span>
-              <span><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="" loading="lazy" />CSS3</span>
-              <span><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="" loading="lazy" />JavaScript</span>
-              <span>Diseño UI/UX</span>
-              <span>Responsive</span>
-            </div>
-            <div class="featured-actions">
-              <a href="https://github.com/fabricoronil" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-                Ver código
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
-              </a>
-            </div>
-          </div>
-        </article>
-
-        <div class="projects-divider" role="separator" aria-label="Otros proyectos">
-          <span>Otros trabajos</span>
-        </div>
-
         <div class="showcase-grid" aria-label="Galería de proyectos">
+          <article class="showcase-card">
+            <div class="showcase-thumb">
+              <span class="showcase-chip">Landing · Cliente</span>
+              <span class="showcase-arrow" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+              </span>
+              <img src="imagenes/climatic.png" alt="Vista previa del sitio web Climatic — servicio de aire acondicionado y electricidad" loading="lazy" />
+            </div>
+            <div class="showcase-body">
+              <h3 class="showcase-title">Climatic — Servicios Técnicos</h3>
+              <p class="showcase-desc">
+                Sitio web profesional para una empresa de instalación, mantenimiento y reparación de aire acondicionado y electricidad. Diseño moderno, responsivo y enfocado en conversión.
+              </p>
+              <div class="showcase-tech">
+                <span><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="" loading="lazy" />HTML5</span><span><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="" loading="lazy" />CSS3</span><span><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="" loading="lazy" />JavaScript</span><span>UI/UX</span>
+              </div>
+            </div>
+            <a href="https://github.com/fabricoronil" target="_blank" rel="noopener noreferrer" class="showcase-link" aria-label="Ver Climatic">Ver proyecto</a>
+          </article>
+
           <article class="showcase-card">
             <div class="showcase-thumb">
               <span class="showcase-chip">Landing</span>
@@ -2028,11 +2173,18 @@
         const open = navLinks.classList.toggle('open');
         hamburger.classList.toggle('open', open);
         hamburger.setAttribute('aria-expanded', String(open));
+        document.body.style.overflow = open ? 'hidden' : '';
+        // Reset delays when closing for clean re-open
+        if (!open) {
+          links.forEach(l => { l.style.transitionDelay = ''; });
+        }
       });
       links.forEach(l => l.addEventListener('click', () => {
         navLinks.classList.remove('open');
         hamburger.classList.remove('open');
         hamburger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+        links.forEach(lk => { lk.style.transitionDelay = ''; });
       }));
     })();
 
