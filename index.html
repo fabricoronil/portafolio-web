@@ -1101,6 +1101,99 @@
       height: 14px;
     }
 
+    /* Proyecto destacado: ocupa todo el ancho, imagen grande y borde con brillo */
+    .showcase-card--featured {
+      grid-column: 1 / -1;
+      flex-direction: row;
+      border-color: rgba(255, 255, 255, 0.22);
+      background:
+        radial-gradient(120% 90% at 100% 0%, rgba(255, 255, 255, 0.07), transparent 60%),
+        var(--surface);
+      box-shadow: 0 30px 80px -40px rgba(255, 255, 255, 0.18);
+    }
+
+    .showcase-card--featured::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      padding: 1px;
+      background: linear-gradient(115deg, transparent 20%, rgba(255, 255, 255, 0.85) 45%, transparent 70%) 0 0 / 250% 100%;
+      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      animation: featured-shine 6s linear infinite;
+      pointer-events: none;
+      z-index: 4;
+    }
+
+    @keyframes featured-shine {
+      from {
+        background-position: 100% 0;
+      }
+
+      to {
+        background-position: -150% 0;
+      }
+    }
+
+    .showcase-card--featured:hover {
+      border-color: rgba(255, 255, 255, 0.4);
+      box-shadow:
+        0 40px 90px -35px rgba(255, 255, 255, 0.22),
+        0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+    }
+
+    .showcase-card--featured .showcase-thumb {
+      flex: 1.45;
+      aspect-ratio: auto;
+      min-height: 400px;
+      border-bottom: none;
+      border-right: 1px solid var(--border);
+    }
+
+    .showcase-card--featured .showcase-thumb img {
+      object-position: left top;
+    }
+
+    .showcase-card--featured .showcase-body {
+      flex: 1;
+      justify-content: center;
+      padding: 2.5rem 2.5rem 2.6rem;
+      gap: 1rem;
+    }
+
+    .showcase-card--featured .showcase-title {
+      font-size: 1.85rem;
+      letter-spacing: -0.02em;
+    }
+
+    .showcase-card--featured .showcase-desc {
+      font-size: 1rem;
+      flex-grow: 0;
+    }
+
+    .showcase-featured {
+      align-self: flex-start;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.66rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-weight: 700;
+      padding: 0.4rem 0.85rem;
+      color: var(--bg-0);
+      background: var(--grad-mono);
+      border-radius: 999px;
+      box-shadow: 0 0 24px -4px var(--accent-glow);
+    }
+
+    .showcase-featured svg {
+      width: 12px;
+      height: 12px;
+    }
+
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -1846,6 +1939,25 @@
         padding: 1.4rem 1.5rem 1.6rem;
       }
 
+      .showcase-card--featured {
+        flex-direction: column;
+      }
+
+      .showcase-card--featured .showcase-thumb {
+        aspect-ratio: 16 / 10;
+        min-height: 0;
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .showcase-card--featured .showcase-body {
+        padding: 1.6rem 1.5rem 1.8rem;
+      }
+
+      .showcase-card--featured .showcase-title {
+        font-size: 1.45rem;
+      }
+
       .showcase-title {
         font-size: 1.15rem;
       }
@@ -2284,6 +2396,39 @@
         </div>
 
         <div class="showcase-grid" aria-label="Galería de proyectos">
+          <article class="showcase-card showcase-card--featured">
+            <div class="showcase-thumb">
+              <span class="showcase-chip">Plataforma</span>
+              <span class="showcase-arrow" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path d="M7 17 17 7" />
+                  <path d="M7 7h10v10" />
+                </svg>
+              </span>
+              <img src="imagenes/tunegociopotenciado.png?v=2"
+                alt="Tu Negocio Potenciado — sistema de gestión integral con métricas" />
+            </div>
+            <div class="showcase-body">
+              <span class="showcase-featured">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z" />
+                </svg>
+                Proyecto destacado
+              </span>
+              <h3 class="showcase-title">Tu Negocio Potenciado</h3>
+              <p class="showcase-desc">
+                Plataforma de gestión integral para PyMEs: clientes, finanzas, inventario, cobranzas y métricas en vivo,
+                con cobro vía QR y enlaces de pago automatizados.
+              </p>
+              <div class="showcase-tech">
+                <span>Dashboard</span><span>UI/UX</span><span>Data Viz</span><span>SaaS</span>
+              </div>
+            </div>
+            <a href="https://tunegociopotenciado.vercel.app/" target="_blank" rel="noopener noreferrer" class="showcase-link"
+              aria-label="Ver Tu Negocio Potenciado">Ver proyecto</a>
+          </article>
+
           <article class="showcase-card">
             <div class="showcase-thumb">
               <span class="showcase-chip">Landing</span>
@@ -2349,33 +2494,6 @@
             </div>
             <a href="https://tepotenciamos.vercel.app/" target="_blank" rel="noopener noreferrer" class="showcase-link"
               aria-label="Ver TePotenciamos">Ver proyecto</a>
-          </article>
-
-          <article class="showcase-card">
-            <div class="showcase-thumb">
-              <span class="showcase-chip">Plataforma</span>
-              <span class="showcase-arrow" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                  stroke-linejoin="round">
-                  <path d="M7 17 17 7" />
-                  <path d="M7 7h10v10" />
-                </svg>
-              </span>
-              <img src="imagenes/tunegociopotenciado.png?v=2"
-                alt="Tu Negocio Potenciado — sistema de gestión integral con métricas" loading="lazy" />
-            </div>
-            <div class="showcase-body">
-              <h3 class="showcase-title">Tu Negocio Potenciado</h3>
-              <p class="showcase-desc">
-                Plataforma de gestión integral para PyMEs: clientes, finanzas, inventario, cobranzas y métricas en vivo,
-                con cobro vía QR y enlaces de pago automatizados.
-              </p>
-              <div class="showcase-tech">
-                <span>Dashboard</span><span>UI/UX</span><span>Data Viz</span><span>SaaS</span>
-              </div>
-            </div>
-            <a href="https://tunegociopotenciado.vercel.app/" target="_blank" rel="noopener noreferrer" class="showcase-link"
-              aria-label="Ver Tu Negocio Potenciado">Ver proyecto</a>
           </article>
 
           <article class="showcase-card">
